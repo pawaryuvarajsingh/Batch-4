@@ -401,7 +401,6 @@
 // console.log(typeof num);
 
 // // 38. Create one null variable and print it.
-// let nullVariable = null;
 // console.log(nullVariable);
 
 // // 39. Create one array with mixed datatypes.
@@ -417,351 +416,631 @@
 //     passed: true
 // };
 
-// //1. Student Login Check
+// // //1. Student Login Check
 
-// // Ask username and password using prompt().
+// // // Ask username and password using prompt().
 
-// If username = "admin" and password = "1234"
-// → print "Login Success"
-// Else print "Invalid User"
-let username = prompt("Enter username:");
-let password = prompt("Enter password:");
-if (username === "admin" && password === "1234") {
-    console.log("Login Success");
-} else {
-    console.log("Invalid User");
-}                                             //login Success
+// // If username = "admin" and password = "1234"
+// // → print "Login Success"
+// // Else print "Invalid User"
+// let username = prompt("Enter username:");
+// let password = prompt("Enter password:");
+// if (username === "admin" && password === "1234") {
+//     console.log("Login Success");
+// } else {
+//     console.log("Invalid User");
+// }                                             //login Success
 
-// 2. ATM Balance System
+// // 2. ATM Balance System
 
-// Create a variable balance = 5000
+// // Create a variable balance = 5000
 
-// Withdraw amount using prompt()
-// If amount less than balance → "Withdraw Success"
-// Else → "Insufficient Balance"
-let balance = 5000;
-let withdrawAmount = parseFloat(prompt("Enter amount to withdraw:"));
-if (withdrawAmount < balance) {
-    console.log("Withdraw Success");
-} else {
-    console.log("Insufficient Balance");
-}                                           //Insufficient Balance
+// // Withdraw amount using prompt()
+// // If amount less than balance → "Withdraw Success"
+// // Else → "Insufficient Balance"
+// let balance = 5000;
+// let withdrawAmount = parseFloat(prompt("Enter amount to withdraw:"));
+// if (withdrawAmount < balance) {
+//     console.log("Withdraw Success");
+// } else {
+//     console.log("Insufficient Balance");
+// }                                           //Insufficient Balance
 
-// 3. Traffic Signal Project
+// // 3. Traffic Signal Project
 
-// Using switch
+// // Using switch
 
-// "red" → stop
-// "yellow" → ready
-// "green" → go
-let signal = prompt("Enter traffic signal color:");
-switch (signal) {
-    case "red":
-        console.log("Stop");
-        break;
-    case "yellow":
-        console.log("Ready");
-        break;
-    case "green":
-        console.log("Go");
-        break;
-    default:
-        console.log("Invalid Signal");
-}                                                //Go
+// // "red" → stop
+// // "yellow" → ready
+// // "green" → go
+// let signal = prompt("Enter traffic signal color:");
+// switch (signal) {
+//     case "red":
+//         console.log("Stop");
+//         break;
+//     case "yellow":
+//         console.log("Ready");
+//         break;
+//     case "green":
+//         console.log("Go");
+//         break;
+//     default:
+//         console.log("Invalid Signal");
+// }                                                //Go
 
-// 4. Age Eligibility Checker
+// // 4. Age Eligibility Checker
 
-// Take age from user.
+// // Take age from user.
 
-// age >= 18 → "Eligible for Vote"
-// Else → "Not Eligible"
-let age = parseInt(prompt("Enter your age:"));
-if (age >= 18) {
-    console.log("Eligible for Vote");
-} else {
-    console.log("Not Eligible");
-}                                          //Eligible for Vote
+// // age >= 18 → "Eligible for Vote"
+// // Else → "Not Eligible"
+// let age = parseInt(prompt("Enter your age:"));
+// if (age >= 18) {
+//     console.log("Eligible for Vote");
+// } else {
+//     console.log("Not Eligible");
+// }                                          //Eligible for Vote
 
-// 5. Shopping Discount System
+// // 5. Shopping Discount System
 
-// Take product price.
+// // Take product price.
 
-// Above 5000 → 20% discount
-// Above 3000 → 10% discount
-// Else → no discount
-let price = parseFloat(prompt("Enter product price:"));
-if (price > 5000) {
-    let discount = price * 0.20;
-    let finalPrice = price - discount;
-    console.log("20% discount applied. Final price: " + finalPrice);
-} else if (price > 3000) {
-    let discount = price * 0.10;
-    let finalPrice = price - discount;
-    console.log("10% discount applied. Final price: " + finalPrice);
-} else {
-    console.log("No discount applied. Final price: " + price);
-}                                                                    //No discount applied. Final price: 350
+// // Above 5000 → 20% discount
+// // Above 3000 → 10% discount
+// // Else → no discount
+// let price = parseFloat(prompt("Enter product price:"));
+// if (price > 5000) {
+//     let discount = price * 0.20;
+//     let finalPrice = price - discount;
+//     console.log("20% discount applied. Final price: " + finalPrice);
+// } else if (price > 3000) {
+//     let discount = price * 0.10;
+//     let finalPrice = price - discount;
+//     console.log("10% discount applied. Final price: " + finalPrice);
+// } else {
+//     console.log("No discount applied. Final price: " + price);
+// }                                                                    //No discount applied. Final price: 350
 
-// 6. Password Strength Checker
+// // 6. Password Strength Checker
 
-// Check password length.
+// // Check password length.
 
-// length >= 8 → "Strong Password"
-// Else → "Weak Password"
-let password1 = prompt("Enter your password:");
-if (password1.length >= 8) {
-    console.log("Strong Password");
-} else {
-    console.log("Weak Password");
-}                                      //Strong Password           
+// // length >= 8 → "Strong Password"
+// // Else → "Weak Password"
+// let password1 = prompt("Enter your password:");
+// if (password1.length >= 8) {
+//     console.log("Strong Password");
+// } else {
+//     console.log("Weak Password");
+// }                                      //Strong Password           
 
-// 7. Mobile Battery Warning
+// // 7. Mobile Battery Warning
 
-// Take battery percentage.
+// // Take battery percentage.
 
-// <= 10 → "Battery Low"
-// <= 50 → "Battery Medium"
-// Else → "Battery Full"
-let batteryPercentage = parseFloat(prompt("Enter battery percentage:"));
-if (batteryPercentage <= 10) {
-    console.log("Battery Low");
-} else if (batteryPercentage <= 50) {
-    console.log("Battery Medium");
-} else {
-    console.log("Battery Full");
-}                                     //Battery Full   
+// // <= 10 → "Battery Low"
+// // <= 50 → "Battery Medium"
+// // Else → "Battery Full"
+// let batteryPercentage = parseFloat(prompt("Enter battery percentage:"));
+// if (batteryPercentage <= 10) {
+//     console.log("Battery Low");
+// } else if (batteryPercentage <= 50) {
+//     console.log("Battery Medium");
+// } else {
+//     console.log("Battery Full");
+// }                                     //Battery Full   
 
-// 8. Employee Salary Bonus
+// // 8. Employee Salary Bonus
 
-// Create salary variable.
+// // Create salary variable.
 
-// salary >= 50000 → 15% bonus
-// salary >= 30000 → 10% bonus
-// Else → 5% bonus
-let salary = parseFloat(prompt("Enter employee salary:"));
-if (salary >= 50000) {
-    let bonus = salary * 0.15;
-    let totalSalary = salary + bonus;
-    console.log("15% bonus applied. Total salary: " + totalSalary);
-} else if (salary >= 30000) {
-    let bonus = salary * 0.10;
-    let totalSalary = salary + bonus;
-    console.log("10% bonus applied. Total salary: " + totalSalary);
-} else {
-    let bonus = salary * 0.05;
-    let totalSalary = salary + bonus;
-    console.log("5% bonus applied. Total salary: " + totalSalary);
-}                                                                  //10% bonus applied. Total salary: 38500
-
-
-// 9. Online Food Order
-
-// Take order amount.
-
-// Above 499 → "Free Delivery"
-// Else → "Delivery Charge Added"
-let orderAmount = parseFloat(prompt("Enter order amount:"));
-if (orderAmount > 499) {
-    console.log("Free Delivery");
-} else {
-    console.log("Delivery Charge Added");
-}                                           //Free Delivery
+// // salary >= 50000 → 15% bonus
+// // salary >= 30000 → 10% bonus
+// // Else → 5% bonus
+// let salary = parseFloat(prompt("Enter employee salary:"));
+// if (salary >= 50000) {
+//     let bonus = salary * 0.15;
+//     let totalSalary = salary + bonus;
+//     console.log("15% bonus applied. Total salary: " + totalSalary);
+// } else if (salary >= 30000) {
+//     let bonus = salary * 0.10;
+//     let totalSalary = salary + bonus;
+//     console.log("10% bonus applied. Total salary: " + totalSalary);
+// } else {
+//     let bonus = salary * 0.05;
+//     let totalSalary = salary + bonus;
+//     console.log("5% bonus applied. Total salary: " + totalSalary);
+// }                                                                  //10% bonus applied. Total salary: 38500
 
 
-// 10. Movie Ticket Booking
+// // 9. Online Food Order
 
-// Take age.
+// // Take order amount.
 
-// Below 5 → Free ticket
-// Below 18 → Child ticket
-// Else → Adult ticket
-let age1 = parseInt(prompt("Enter your age:"));
-if (age1 < 5) {
-    console.log("Free ticket");
-} else if (age1 < 18) {
-    console.log("Child ticket");
-} else {
-    console.log("Adult ticket");
-}                                             //Adult ticket
-
-// 11. Instagram Likes Counter
-
-// Using for loop
-// Print:
-
-// Like 1
-// Like 2
-// Like 3
-// Like 4
-// Like 5
-for (let i = 1; i <= 5; i++) {
-    console.log("Like " + i);
-}
-//  Like 1
-//  Like 2
-//  Like 3
-//  Like 4
-//  Like 5
-
-// 12. Countdown Timer
-
-// Using while loop
-// Print:
-
-// 5
-// 4
-// 3
-// 2
-// 1
-// Start
-let countdown = 5;
-while (countdown > 0) {
-    console.log(countdown);
-    countdown--;
-}
-console.log("Start");      
- //5
-// 4
-// 3
-// 2
-// 1
-// Start
+// // Above 499 → "Free Delivery"
+// // Else → "Delivery Charge Added"
+// let orderAmount = parseFloat(prompt("Enter order amount:"));
+// if (orderAmount > 499) {
+//     console.log("Free Delivery");
+// } else {
+//     console.log("Delivery Charge Added");
+// }                                           //Free Delivery
 
 
-// 13. OTP Verification
+// // 10. Movie Ticket Booking
 
-// Create OTP = 1234
-// Take input from user.
+// // Take age.
 
-// Correct → "OTP Verified"
-// Wrong → "Invalid OTP"
-const OTP = "1234";
-let userOTP = prompt("Enter OTP:");
-if (userOTP === OTP) {
-    console.log("OTP Verified");
-} else {
-    console.log("Invalid OTP");
-}                                 //Invalid OTP   
+// // Below 5 → Free ticket
+// // Below 18 → Child ticket
+// // Else → Adult ticket
+// let age1 = parseInt(prompt("Enter your age:"));
+// if (age1 < 5) {
+//     console.log("Free ticket");
+// } else if (age1 < 18) {
+//     console.log("Child ticket");
+// } else {
+//     console.log("Adult ticket");
+// }                                             //Adult ticket
 
+// // 11. Instagram Likes Counter
 
-// 14. E-commerce Cart Total
+// // Using for loop
+// // Print:
 
-// Array:
-
-// let cart = [200,500,1000,300]
-// Find total cart value using loop.
-let cart = [200, 500, 1000, 300];
-let totalCartValue = 0;
-for (let i = 0; i < cart.length; i++) {
-    totalCartValue += cart[i];
-}
-console.log("Total Cart Value: " + totalCartValue);  //Total Cart Value: 2000
-
-
-// 15. Student Mark Grade System
-
-// Take mark.
-
-// 90+ → A Grade
-// 70+ → B Grade
-// 50+ → C Grade
-// Else → Fail
-let mark = parseFloat(prompt("Enter student mark:"));
-if (mark >= 90) {
-    console.log("A Grade");
-} else if (mark >= 70) {
-    console.log("B Grade");
-} else if (mark >= 50) {
-    console.log("C Grade");
-} else {
-    console.log("Fail");
-}                                    //Fail  
-
-// 16. Netflix Subscription Checker
-
-// Boolean variable:
-
-// let subscription = true
-// true → "Watch Movie"
-// false → "Buy Subscription"
-let subscription = true;
-if (subscription) {
-    console.log("Watch Movie");
-} else {
-    console.log("Buy Subscription");
-}                                         //Watch Movie
-
-
-// 17. Product Stock Checker
-
-// let stock = 0
-// stock > 0 → "Product Available"
-// Else → "Out of Stock"
-let stock = 0;
-if (stock > 0) {
-    console.log("Product Available");
-} else {
-    console.log("Out of Stock");
-}                                    //Out of Stock
-
-
-// 18. Weather App Condition
-
-// Using switch
-
-// "sunny" → "Go Outside"
-// "rainy" → "Take Umbrella"
-// "cold" → "Wear Jacket"
-let weather = prompt("Enter weather condition:");
-switch (weather) {
-    case "sunny":
-        console.log("Go Outside");
-        break;
-    case "rainy":
-        console.log("Take Umbrella");
-        break;
-    case "cold":
-        console.log("Wear Jacket");
-        break;
-    default:
-        console.log("Invalid weather condition");
-}                                                   //Go Outside
-
-// 19. User Profile Object
-
-// Create object:
-
-// let user = {
-//    name : "yuvaraj",
-//    age : 25,
-//    city : "Bangalore"
+// // Like 1
+// // Like 2
+// // Like 3
+// // Like 4
+// // Like 5
+// for (let i = 1; i <= 5; i++) {
+//     console.log("Like " + i);
 // }
-// Print all values using for in loop.
-let user = {
-    name: "yuvaraj",
-    age: 25,
-    city: "Bangalore"
-};
-for (let key in user) {
-    console.log(key + ": " + user[key]);
-}                                             
- //name: yuvaraj
-// age: 25
-// city: Bangalore
+// //  Like 1
+// //  Like 2
+// //  Like 3
+// //  Like 4
+// //  Like 5
 
-// 20. WhatsApp Chat Array
+// // 12. Countdown Timer
 
-// Array:
+// // Using while loop
+// // Print:
 
-// let chats = ["hi","hello","where are you","ok"]
-// Print each message using for of loop.
-let chats = ["hi", "hello", "where are you", "ok"];
-for (let message of chats) {
-    console.log(message);
-}                                 
- //hi
-// hello
-// where are you
-// ok
+// // 5
+// // 4
+// // 3
+// // 2
+// // 1
+// // Start
+// let countdown = 5;
+// while (countdown > 0) {
+//     console.log(countdown);
+//     countdown--;
+// }
+// console.log("Start");      
+//  //5
+// // 4
+// // 3
+// // 2
+// // 1
+// // Start
 
+
+// // 13. OTP Verification
+
+// // Create OTP = 1234
+// // Take input from user.
+
+// // Correct → "OTP Verified"
+// // Wrong → "Invalid OTP"
+// const OTP = "1234";
+// let userOTP = prompt("Enter OTP:");
+// if (userOTP === OTP) {
+//     console.log("OTP Verified");
+// } else {
+//     console.log("Invalid OTP");
+// }                                 //Invalid OTP   
+
+
+// // 14. E-commerce Cart Total
+
+// // Array:
+
+// // let cart = [200,500,1000,300]
+// // Find total cart value using loop.
+// let cart = [200, 500, 1000, 300];
+// let totalCartValue = 0;
+// for (let i = 0; i < cart.length; i++) {
+//     totalCartValue += cart[i];
+// }
+// console.log("Total Cart Value: " + totalCartValue);  //Total Cart Value: 2000
+
+
+// // 15. Student Mark Grade System
+
+// // Take mark.
+
+// // 90+ → A Grade
+// // 70+ → B Grade
+// // 50+ → C Grade
+// // Else → Fail
+// let mark = parseFloat(prompt("Enter student mark:"));
+// if (mark >= 90) {
+//     console.log("A Grade");
+// } else if (mark >= 70) {
+//     console.log("B Grade");
+// } else if (mark >= 50) {
+//     console.log("C Grade");
+// } else {
+//     console.log("Fail");
+// }                                    //Fail  
+
+// // 16. Netflix Subscription Checker
+
+// // Boolean variable:
+
+// // let subscription = true
+// // true → "Watch Movie"
+// // false → "Buy Subscription"
+// let subscription = true;
+// if (subscription) {
+//     console.log("Watch Movie");
+// } else {
+//     console.log("Buy Subscription");
+// }                                         //Watch Movie
+
+
+// // 17. Product Stock Checker
+
+// // let stock = 0
+// // stock > 0 → "Product Available"
+// // Else → "Out of Stock"
+// let stock = 0;
+// if (stock > 0) {
+//     console.log("Product Available");
+// } else {
+//     console.log("Out of Stock");
+// }                                    //Out of Stock
+
+
+// // 18. Weather App Condition
+
+// // Using switch
+
+// // "sunny" → "Go Outside"
+// // "rainy" → "Take Umbrella"
+// // "cold" → "Wear Jacket"
+// let weather = prompt("Enter weather condition:");
+// switch (weather) {
+//     case "sunny":
+//         console.log("Go Outside");
+//         break;
+//     case "rainy":
+//         console.log("Take Umbrella");
+//         break;
+//     case "cold":
+//         console.log("Wear Jacket");
+//         break;
+//     default:
+//         console.log("Invalid weather condition");
+// }                                                   //Go Outside
+
+// // 19. User Profile Object
+
+// // Create object:
+
+// // let user = {
+// //    name : "yuvaraj",
+// //    age : 25,
+// //    city : "Bangalore"
+// // }
+// // Print all values using for in loop.
+// let user = {
+//     name: "yuvaraj",
+//     age: 25,
+//     city: "Bangalore"
+// };
+// for (let key in user) {
+//     console.log(key + ": " + user[key]);
+// }                                             
+//  //name: yuvaraj
+// // age: 25
+// // city: Bangalore
+
+// // 20. WhatsApp Chat Array
+
+// // Array:
+
+// // let chats = ["hi","hello","where are you","ok"]
+// // Print each message using for of loop.
+// let chats = ["hi", "hello", "where are you", "ok"];
+// for (let message of chats) {
+//     console.log(message);
+// }                                 
+//  //hi
+// // hello
+// // where are you
+// // ok
+                   // Task 4
+
+// Task 1 — Smart Attendance Checker
+// Concept:
+// if else
+// logical operator
+// function
+// Scenario:
+// A student can enter exam hall only if:
+// attendance >= 75
+// fees paid = true
+// Expected:
+// Allowed for Exam
+// Otherwise:
+// Not Allowed
+function checkAttendance(attendance, feesPaid) {
+    if (attendance >= 75 && feesPaid) {
+        console.log("Allowed for Exam");
+    } else {
+        console.log("Not Allowed");
+    }
+}
+
+// Test the function
+checkAttendance(80, true);  // Allowed for Exam
+checkAttendance(70, true);  // Not Allowed
+checkAttendance(80, false); // Not Allowed
+checkAttendance(70, false); // Not Allowed
+
+// Task 2 — Mobile Password Strength Checker
+// Concept:
+// string
+// conditions
+// Requirement:
+// Check password:
+// minimum 8 characters
+// should contain number
+// should contain uppercase
+// Example:
+// Abc12345
+// Output:
+// Strong Password
+function checkPasswordStrength(password) {
+    const hasMinimumLength = password.length >= 8;
+    const hasNumber = /\d/.test(password);
+    const hasUppercase = /[A-Z]/.test(password);
+
+    if (hasMinimumLength && hasNumber && hasUppercase) {
+        console.log("Strong Password");
+    } else {
+        console.log("Weak Password");
+    }
+}
+
+// Test the function
+checkPasswordStrength("Abc12345"); // Strong Password
+checkPasswordStrength("abc12345"); // Weak Password
+checkPasswordStrength("Abcdefgh"); // Weak Password
+checkPasswordStrength("12345678"); // Weak Password
+
+// Task 3 — Find Second Largest Number
+// Concept:
+// loop
+// conditions
+// variables
+// Input:
+// [10,50,80,20,90,70]
+// Output:
+// 80
+function findSecondLargest(arr) {
+    let largest = -Infinity;
+    let secondLargest = -Infinity;
+    for (let num of arr) {
+        if (num > largest) {
+            secondLargest = largest;
+            largest = num;
+        } else if (num > secondLargest && num < largest) {
+            secondLargest = num;
+        }
+    }
+    return secondLargest;
+}
+
+// Test the function
+const numbers = [10, 50, 80, 20, 90, 70];
+console.log(findSecondLargest(numbers)); // 80
+
+// Task 4 — Bus Seat Booking System
+// Concept:
+// array
+// loop
+// conditions
+// Requirement:
+// Create 10 seats.
+// If seat booked:
+// Seat Already Booked
+// Else:
+// Seat Booked Successfully
+const seats = new Array(10).fill(false); // false indicates seat is available
+
+function bookSeat(seatNumber) {
+    if (seatNumber < 1 || seatNumber > 10) {
+        console.log("Invalid seat number");
+        return;
+    }
+    if (seats[seatNumber - 1]) {
+        console.log("Seat Already Booked");
+    } else {
+        seats[seatNumber - 1] = true;
+        console.log("Seat Booked Successfully");
+    }
+}
+
+// Test the function
+bookSeat(3); // Seat Booked Successfully
+bookSeat(3); // Seat Already Booked
+bookSeat(11); // Invalid seat number
+
+// Task 5 — ATM Cash Withdraw Logic
+// Concept:
+// function
+// return
+// conditions
+// Rules:
+// balance = 10000
+// user cannot withdraw more than balance
+// minimum balance should maintain 1000
+// Example:
+// Withdraw:
+// 9500
+// Output:
+// Insufficient Balance
+function withdrawCash(amount) {
+    const balance = 10000;
+    const minimumBalance = 1000;
+    if (amount > balance) {
+        console.log("Insufficient Balance");
+    } else if (balance - amount < minimumBalance) {
+        console.log("Minimum Balance should be maintained");
+    } else {
+        console.log("Cash Withdrawn Successfully");
+    }
+}
+
+// Test the function
+withdrawCash(9500); // Insufficient Balance
+withdrawCash(9000); // Minimum Balance should be maintained
+withdrawCash(8000); // Cash Withdrawn Successfully
+
+// Task 6 — Product Search Engine
+// Concept:
+// array
+// for of
+// string methods
+// Requirement:
+// Search product from array.
+// Example:
+// ["iphone","samsung","realme","oppo"]
+// Search:
+// realme
+// Output:
+// Product Found
+function searchProduct(products, searchTerm) {
+    for (let product of products) {
+        if (product.toLowerCase() === searchTerm.toLowerCase()) {
+            console.log("Product Found");
+            return;
+        }
+    }
+    console.log("Product Not Found");
+}
+
+// Test the function
+const productList = ["iphone", "samsung", "realme", "oppo"];
+searchProduct(productList, "realme"); // Product Found
+searchProduct(productList, "nokia");  // Product Not Found
+
+// Task 7 — Voting Eligibility System
+// Concept:
+// nested if
+// logical operators
+// Rules:
+// Person can vote only if:
+// age >= 18
+// has voter id
+// citizenship = Indian
+
+function checkVotingEligibility(age, hasVoterId, citizenship) {
+    if (age >= 18) {
+        if (hasVoterId) {
+            if (citizenship.toLowerCase() === "indian") {
+                console.log("Eligible to Vote");
+            } else {
+                console.log("Not Eligible: Citizenship must be Indian");
+            }
+        } else {
+            console.log("Not Eligible: Voter ID required");
+        }
+    } else {
+        console.log("Not Eligible: Age must be 18 or above");
+    }
+}
+
+// Test the function
+checkVotingEligibility(20, true, "Indian"); // Eligible to Vote
+checkVotingEligibility(17, true, "Indian"); // Not Eligible: Age must be 18 or above
+checkVotingEligibility(20, false, "Indian"); // Not Eligible: Voter ID required
+checkVotingEligibility(20, true, "American"); // Not Eligible: Citizenship must be Indian
+
+// Task 8 — Online Food Order Bill
+// Concept:
+// function
+// parameters
+// arithmetic operators
+// Requirement:
+// Calculate:
+// food price
+// GST
+// delivery charge
+// discount
+// Final Output:
+// Total Bill : ₹450
+function calculateBill(foodPrice, gstRate, deliveryCharge, discount) {
+    const gstAmount = foodPrice * (gstRate / 100);
+    const totalBeforeDiscount = foodPrice + gstAmount + deliveryCharge;
+    const totalBill = totalBeforeDiscount - discount;
+    console.log("Total Bill: ₹" + totalBill);
+}
+
+// Test the function
+calculateBill(400, 5, 50, 20); // Total Bill: ₹450
+calculateBill(300, 10, 30, 15); // Total Bill: ₹345
+
+// Task 9 — Reverse Word Without reverse()
+// Concept:
+// loop
+// string
+// Input:
+// javascript
+// Output:
+// tpircsavaj
+function reverseWord(word) {
+    let reversed = "";
+    for (let i = word.length - 1; i >= 0; i--) {
+        reversed += word[i];
+    }
+    return reversed;
+}
+
+// Test the function
+console.log(reverseWord("javascript")); // tpircsavaj
+console.log(reverseWord("hello"));      // olleh
+
+// Task 10 — Mini Instagram Like System
+// Concept:
+// variable
+// function
+// ternary operator
+// Requirement:
+// When user clicks like:
+// Liked ❤️
+// Else:
+// Like 🤍
+// Also maintain total likes count.
+let totalLikes = 0;
+
+function toggleLike(isLiked) {
+    if (isLiked) {
+        totalLikes++;
+        console.log("Liked ❤️");
+    } else {
+        totalLikes = Math.max(0, totalLikes - 1);
+        console.log("Like 🤍");
+    }
+    console.log("Total Likes: " + totalLikes);
+}
+// Test the function
+toggleLike(true);  // Liked ❤️ Total Likes: 1
+toggleLike(true);  // Liked ❤️ Total Likes: 2
+toggleLike(false); // Like 🤍 Total Likes: 1
+toggleLike(false); // Like 🤍 Total Likes: 0
 
