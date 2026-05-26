@@ -42,7 +42,7 @@
 
 // // 9. Try reassigning const variable and observe error.
 //     // const country1 = "India"
-    
+    //
 //     //       country1 = "USA"
 //     // console.log(country1);
 //     // And the observe error is: Uncaught TypeError: Assignment to constant variable.
@@ -1044,383 +1044,716 @@
 // toggleLike(false); // Like 🤍 Total Likes: 1
 // toggleLike(false); // Like 🤍 Total Likes: 0
 
-           //Task
+           //Task 5
 
-// JavaScript Array & Spread Operator Tasks
-// Beginner Level Tasks
-// Task 1 — Spread Operator
-// Create 2 arrays:
-// let frontEnd = ["HTML","CSS"]
-// let backEnd = ["Node","MongoDB"]
-// Using spread operator:
-// Merge both arrays
-// Print the merged array
-let frontEnd = ["HTML", "CSS"];
-let backEnd = ["Node", "MongoDB"];
-let fullStack = [...frontEnd, ...backEnd];
-console.log(fullStack); // ["HTML", "CSS", "Node", "MongoDB"] 
+// // JavaScript Array & Spread Operator Tasks
+// // Beginner Level Tasks
+// // Task 1 — Spread Operator
+// // Create 2 arrays:
+// // let frontEnd = ["HTML","CSS"]
+// // let backEnd = ["Node","MongoDB"]
+// // Using spread operator:
+// // Merge both arrays
+// // Print the merged array
+// let frontEnd = ["HTML", "CSS"];
+// let backEnd = ["Node", "MongoDB"];
+// let fullStack = [...frontEnd, ...backEnd];
+// console.log(fullStack); // ["HTML", "CSS", "Node", "MongoDB"] 
 
-// Task 2 — Copy Array
-// Create:
-// let original = [1,2,3]
-// Using spread operator:
-// Copy array into another variable
-// Add 4 into copied array
-// Print both arrays
-// Check original array changed or not
+// // Task 2 — Copy Array
+// // Create:
+// // let original = [1,2,3]
+// // Using spread operator:
+// // Copy array into another variable
+// // Add 4 into copied array
+// // Print both arrays
+// // Check original array changed or not
 
-let original = [1, 2, 3];
-let copied = [...original];
-copied.push(4);
-console.log("Original Array:", original); // Original Array: [1, 2, 3]
-console.log("Copied Array:", copied);     // Copied Array: [1, 2, 3, 4]
+// let original = [1, 2, 3];
+// let copied = [...original];
+// copied.push(4);
+// console.log("Original Array:", original); // Original Array: [1, 2, 3]
+// console.log("Copied Array:", copied);     // Copied Array: [1, 2, 3, 4]
 
-// Task 3 — Object Merge
-// Create 2 objects:
+// // Task 3 — Object Merge
+// // Create 2 objects:
+// // let student1 = {
+// //   name : "Rahul"
+// // }
+
+// // let student2 = {
+// //   role : "Developer"
+// // }
+// // Using spread operator:
+// // Merge objects
+// // Print result
+
 // let student1 = {
-//   name : "Rahul"
-// }
-
+//     name: "Rahul"
+// };
 // let student2 = {
-//   role : "Developer"
+//     role: "Developer"
+// };
+// let mergedStudent = { ...student1, ...student2 };
+// console.log(mergedStudent); // { name: "Rahul", role: "Developer" } 
+
+
+// // Task 4 — Rest Operator
+// // Create function:
+// // function total(a,b,...rest)
+// // Tasks:
+// // Print a
+// // Print b
+// // Print remaining values
+// // Print total count of remaining values
+// // Call function with 8 values.
+
+// function total(a, b, ...rest) {
+//     console.log("a:", a);
+//     console.log("b:", b);
+//     console.log("Remaining values:", rest);
+//     console.log("Count of remaining values:", rest.length);
 // }
-// Using spread operator:
-// Merge objects
-// Print result
+// // Test the function
+// total(1, 2, 3, 4, 5, 6, 7, 8);
+// // Output:
+// // a: 1
+// // b: 2
+// // Remaining values: [3, 4, 5, 6, 7, 8]
+// // Count of remaining values: 6
 
-let student1 = {
-    name: "Rahul"
-};
-let student2 = {
-    role: "Developer"
-};
-let mergedStudent = { ...student1, ...student2 };
-console.log(mergedStudent); // { name: "Rahul", role: "Developer" } 
+// // Destructuring Tasks
+// // Task 5 — Array Destructuring
+// // Create:
+// // let colors = ["red","green","blue","yellow"]
+// // Tasks:
+// // Store all values into separate variables using destructuring
+// // Print only blue color
+// let colors = ["red", "green", "blue", "yellow"];
+// let [red, green, blue, yellow] = colors;
+// console.log("Blue color:", blue); // Blue color: blue
 
+// // Task 6 — Nested Array Destructuring
+// // Create:
+// // let data = [1,[2,[3,[4]]]]
+// // Tasks:
+// // Access all values using destructuring only
+// // Print:
+// // 1 2 3 4
+// let data = [1, [2, [3, [4]]]];
+// let [one, [two, [three, [four]]]] = data;
+// console.log(one, two, three, four); // 1 2 3 4 
 
-// Task 4 — Rest Operator
-// Create function:
-// function total(a,b,...rest)
-// Tasks:
-// Print a
-// Print b
-// Print remaining values
-// Print total count of remaining values
-// Call function with 8 values.
+// // Task 7 — Object Destructuring
+// // Create:
+// // let mobile = {
+// //   brand : "Samsung",
+// //   price : 20000,
+// //   color : "black"
+// // }
+// // Tasks:
+// // Destructure all properties
+// // Print:
+// // Samsung black
 
-function total(a, b, ...rest) {
-    console.log("a:", a);
-    console.log("b:", b);
-    console.log("Remaining values:", rest);
-    console.log("Count of remaining values:", rest.length);
-}
-// Test the function
-total(1, 2, 3, 4, 5, 6, 7, 8);
-// Output:
-// a: 1
-// b: 2
-// Remaining values: [3, 4, 5, 6, 7, 8]
-// Count of remaining values: 6
-
-// Destructuring Tasks
-// Task 5 — Array Destructuring
-// Create:
-// let colors = ["red","green","blue","yellow"]
-// Tasks:
-// Store all values into separate variables using destructuring
-// Print only blue color
-let colors = ["red", "green", "blue", "yellow"];
-let [red, green, blue, yellow] = colors;
-console.log("Blue color:", blue); // Blue color: blue
-
-// Task 6 — Nested Array Destructuring
-// Create:
-// let data = [1,[2,[3,[4]]]]
-// Tasks:
-// Access all values using destructuring only
-// Print:
-// 1 2 3 4
-let data = [1, [2, [3, [4]]]];
-let [one, [two, [three, [four]]]] = data;
-console.log(one, two, three, four); // 1 2 3 4 
-
-// Task 7 — Object Destructuring
-// Create:
 // let mobile = {
-//   brand : "Samsung",
-//   price : 20000,
-//   color : "black"
-// }
-// Tasks:
-// Destructure all properties
-// Print:
-// Samsung black
+//     brand: "Samsung",
+//     price: 20000,
+//     color: "black"
+// };
+// let { brand, price, color } = mobile;
+// console.log(brand, color); // Samsung black
 
-let mobile = {
-    brand: "Samsung",
-    price: 20000,
-    color: "black"
-};
-let { brand, price, color } = mobile;
-console.log(brand, color); // Samsung black
+// // Array Manipulation Tasks
+// // Task 8 — push() & pop()
+// // Create:
+// // let numbers = [1,2,3]
+// // Tasks:
+// // Add 4,5,6 using push
+// // Remove last value using pop
+// // Print final array
+// let numbers = [1, 2, 3];
+// numbers.push(4, 5, 6);
+// numbers.pop();
+// console.log(numbers); // [1, 2, 3, 4, 5]
 
-// Array Manipulation Tasks
-// Task 8 — push() & pop()
-// Create:
-// let numbers = [1,2,3]
-// Tasks:
-// Add 4,5,6 using push
-// Remove last value using pop
-// Print final array
-let numbers = [1, 2, 3];
-numbers.push(4, 5, 6);
-numbers.pop();
-console.log(numbers); // [1, 2, 3, 4, 5]
+// // Task 9 — shift() & unshift()
+// // Create:
+// // let fruits = ["banana","orange"]
+// // Tasks:
+// // Add "apple" in first position
+// // Remove first value
+// // Print final result
+// let fruits = ["banana", "orange"];
+// fruits.unshift("apple");
+// fruits.shift();
+// console.log(fruits); // ["banana", "orange"]
 
-// Task 9 — shift() & unshift()
-// Create:
-// let fruits = ["banana","orange"]
-// Tasks:
-// Add "apple" in first position
-// Remove first value
-// Print final result
-let fruits = ["banana", "orange"];
-fruits.unshift("apple");
-fruits.shift();
-console.log(fruits); // ["banana", "orange"]
+// // Task 10 — splice()
+// // Create:
+// // let arr = [1,2,30,40,5,6]
+// // Tasks:
+// // Remove 30 and 40
+// // Add 3 and 4
+// // Print final array
+// // Expected Output:
+// // [1,2,3,4,5,6]
+// let arr = [1, 2, 30, 40, 5, 6];
+// arr.splice(2, 2, 3, 4);
+// console.log(arr); // [1, 2, 3, 4, 5, 6]
 
-// Task 10 — splice()
-// Create:
-// let arr = [1,2,30,40,5,6]
-// Tasks:
-// Remove 30 and 40
-// Add 3 and 4
-// Print final array
-// Expected Output:
-// [1,2,3,4,5,6]
-let arr = [1, 2, 30, 40, 5, 6];
-arr.splice(2, 2, 3, 4);
-console.log(arr); // [1, 2, 3, 4, 5, 6]
+// // Task 11 — concat()
+// // Create 2 arrays:
+// // let a = [1,2]
+// // let b = [3,4]
+// // Tasks:
+// // Merge using concat
+// // Add extra values 5,6
+// // Print result
+// let a = [1, 2];
+// let b = [3, 4];
+// let merged = a.concat(b, [5, 6]);
+// console.log(merged); // [1, 2, 3, 4, 5, 6]
 
-// Task 11 — concat()
-// Create 2 arrays:
-// let a = [1,2]
-// let b = [3,4]
-// Tasks:
-// Merge using concat
-// Add extra values 5,6
-// Print result
-let a = [1, 2];
-let b = [3, 4];
-let merged = a.concat(b, [5, 6]);
-console.log(merged); // [1, 2, 3, 4, 5, 6]
+// // Task 12 — slice()
+// // Create:
+// // let marks = [10,20,30,40,50,60]
+// // Tasks:
+// // Extract only 30,40,50
+// // Print extracted array
+// let marks = [10, 20, 30, 40, 50, 60];
+// let extracted = marks.slice(2, 5);
+// console.log(extracted); // [30, 40, 50]
 
-// Task 12 — slice()
-// Create:
-// let marks = [10,20,30,40,50,60]
-// Tasks:
-// Extract only 30,40,50
-// Print extracted array
-let marks = [10, 20, 30, 40, 50, 60];
-let extracted = marks.slice(2, 5);
-console.log(extracted); // [30, 40, 50]
+// // Task 13 — flat()
+// // Create:
+// // let nest = [1,[2,[3,[4,[5]]]]]
+// // Tasks:
+// // Convert nested array into single array
+// // Print result
+// let nest = [1, [2, [3, [4, [5]]]]];
+// let flatArray = nest.flat(Infinity);
+// console.log(flatArray); // [1, 2, 3, 4, 5]
 
-// Task 13 — flat()
-// Create:
-// let nest = [1,[2,[3,[4,[5]]]]]
-// Tasks:
-// Convert nested array into single array
-// Print result
-let nest = [1, [2, [3, [4, [5]]]]];
-let flatArray = nest.flat(Infinity);
-console.log(flatArray); // [1, 2, 3, 4, 5]
+// // Task 14 — fill()
+// // Create:
+// // let arr = [1,2,3,4,5]
+// // Tasks:
+// // Replace last 2 values with "done"
+// // Print array
+// let arr2 = [1, 2, 3, 4, 5];
+// arr2.fill("done", 3);
+// console.log(arr2); // [1, 2, 3, "done", "done"]
 
-// Task 14 — fill()
-// Create:
-// let arr = [1,2,3,4,5]
-// Tasks:
-// Replace last 2 values with "done"
-// Print array
-let arr2 = [1, 2, 3, 4, 5];
-arr2.fill("done", 3);
-console.log(arr2); // [1, 2, 3, "done", "done"]
+// // Task 15 — includes()
+// // Create:
+// // let values = [10,20,30,40]
+// // Tasks:
+// // Check 20 exists or not
+// // Check 100 exists or not
 
-// Task 15 — includes()
-// Create:
-// let values = [10,20,30,40]
-// Tasks:
-// Check 20 exists or not
-// Check 100 exists or not
+// let values = [10, 20, 30, 40];
+// console.log(values.includes(20)); // true
+// console.log(values.includes(100)); // false
 
-let values = [10, 20, 30, 40];
-console.log(values.includes(20)); // true
-console.log(values.includes(100)); // false
-
-// Task 16 — indexOf()
-// Create:
-// let arr = [1,2,3,4,3,2]
-// Tasks:
-// Find first index of 3
-// Find first index of 2
-// Task 17 — lastIndexOf()
-// Using same array:
-// let arr = [1,2,3,4,3,2]
-// Tasks:
-// Find last index of 3
-// Find last index of 2
-let arr3 = [1, 2, 3, 4, 3, 2];
-console.log(arr3.indexOf(3)); // 2
-console.log(arr3.indexOf(2)); // 1
-console.log(arr3.lastIndexOf(3)); // 4
-console.log(arr3.lastIndexOf(2)); // 5
+// // Task 16 — indexOf()
+// // Create:
+// // let arr = [1,2,3,4,3,2]
+// // Tasks:
+// // Find first index of 3
+// // Find first index of 2
+// // Task 17 — lastIndexOf()
+// // Using same array:
+// // let arr = [1,2,3,4,3,2]
+// // Tasks:
+// // Find last index of 3
+// // Find last index of 2
+// let arr3 = [1, 2, 3, 4, 3, 2];
+// console.log(arr3.indexOf(3)); // 2
+// console.log(arr3.indexOf(2)); // 1
+// console.log(arr3.lastIndexOf(3)); // 4
+// console.log(arr3.lastIndexOf(2)); // 5
 
 
-// Task 18 — sort()
-// Create:
-// let nums = [100,2,55,1,9]
-// Tasks:
-// Sort array
-// Observe wrong output
-// Then solve using compare function
-let nums = [100, 2, 55, 1, 9];
-nums.sort();
-console.log(nums); // [1, 100, 2, 55, 9] - Wrong output
+// // Task 18 — sort()
+// // Create:
+// // let nums = [100,2,55,1,9]
+// // Tasks:
+// // Sort array
+// // Observe wrong output
+// // Then solve using compare function
+// let nums = [100, 2, 55, 1, 9];
+// nums.sort();
+// console.log(nums); // [1, 100, 2, 55, 9] - Wrong output
 
 
-// Task 19 — reverse()
-// Create:
-// let letters = ["a","b","c","d"]
-// Tasks:
-// Reverse array
-// Print output
-// Real-Time Logical Tasks
-let letters = ["a", "b", "c", "d"];
-letters.reverse();
-console.log(letters); // ["d", "c", "b", "a"]
+// // Task 19 — reverse()
+// // Create:
+// // let letters = ["a","b","c","d"]
+// // Tasks:
+// // Reverse array
+// // Print output
+// // Real-Time Logical Tasks
+// let letters = ["a", "b", "c", "d"];
+// letters.reverse();
+// console.log(letters); // ["d", "c", "b", "a"]
 
-// Task 20 — Student Management
-// Create student array:
-// let students = ["Rahul","Ajay","Kumar"]
-// Tasks:
-// Add new student
-// Remove one student
-// Replace one student name
-// Reverse student list
-let students = ["Rahul", "Ajay", "Kumar"];
-students.push("Vijay");
-students.splice(1, 1); // Remove "Ajay"
-students[1] = "Suresh";
-students.reverse();
-console.log(students); // ["Vijay", "Suresh", "Rahul"]
+// // Task 20 — Student Management
+// // Create student array:
+// // let students = ["Rahul","Ajay","Kumar"]
+// // Tasks:
+// // Add new student
+// // Remove one student
+// // Replace one student name
+// // Reverse student list
+// let students = ["Rahul", "Ajay", "Kumar"];
+// students.push("Vijay");
+// students.splice(1, 1); // Remove "Ajay"
+// students[1] = "Suresh";
+// students.reverse();
+// console.log(students); // ["Vijay", "Suresh", "Rahul"]
 
-// Task 21 — Shopping Cart
-// Create:
-// let cart = ["Shoes","Watch","Phone"]
-// Tasks:
-// Add "Laptop"
-// Remove "Watch"
-// Check "Phone" exists or not
-// Print total cart items
-let cart = ["Shoes", "Watch", "Phone"];
-cart.push("Laptop");
-cart.splice(cart.indexOf("Watch"), 1);
-console.log(cart.includes("Phone")); // true
-console.log("Total cart items:", cart.length); // Total cart items: 3
+// // Task 21 — Shopping Cart
+// // Create:
+// // let cart = ["Shoes","Watch","Phone"]
+// // Tasks:
+// // Add "Laptop"
+// // Remove "Watch"
+// // Check "Phone" exists or not
+// // Print total cart items
+// let cart = ["Shoes", "Watch", "Phone"];
+// cart.push("Laptop");
+// cart.splice(cart.indexOf("Watch"), 1);
+// console.log(cart.includes("Phone")); // true
+// console.log("Total cart items:", cart.length); // Total cart items: 3
 
-// Task 22 — Employee Database
-// Create object:
+// // Task 22 — Employee Database
+// // Create object:
+// // let employee = {
+// //   name : "Naveen",
+// //   role : "Web Developer",
+// //   salary : "5LPA"
+// // }
+// // Tasks:
+// // Destructure all values
+// // Copy object using spread operator
+// // Change salary in copied object only
+// // Check original object changed or not
+// // Advanced Logical Tasks
 // let employee = {
-//   name : "Naveen",
-//   role : "Web Developer",
-//   salary : "5LPA"
+//     name: "Naveen",
+//     role: "Web Developer",
+//     salary: "5LPA"
+// };
+// let { name, role, salary } = employee;
+// let copiedEmployee = { ...employee };
+// copiedEmployee.salary = "6LPA";
+// console.log("Original Employee:", employee); // Original Employee: { name: "Naveen", role: "Web Developer", salary: "5LPA" }
+// console.log("Copied Employee:", copiedEmployee); // Copied Employee: { name: "Naveen", role: "Web Developer", salary: "6LPA" }
+
+
+// // Task 23 — Custom Function
+// // Create function:
+// // function company(name,...skills)
+// // Tasks:
+// // Print employee name
+// // Print all skills
+// // Print total skill count
+// // Example Call:
+// // company("Naveen","HTML","CSS","JS","React")
+// function company(name, ...skills) {
+//     console.log("Employee Name:", name);
+//     console.log("Skills:", skills);
+//     console.log("Total Skill Count:", skills.length);
 // }
-// Tasks:
-// Destructure all values
-// Copy object using spread operator
-// Change salary in copied object only
-// Check original object changed or not
-// Advanced Logical Tasks
-let employee = {
-    name: "Naveen",
-    role: "Web Developer",
-    salary: "5LPA"
-};
-let { name, role, salary } = employee;
-let copiedEmployee = { ...employee };
-copiedEmployee.salary = "6LPA";
-console.log("Original Employee:", employee); // Original Employee: { name: "Naveen", role: "Web Developer", salary: "5LPA" }
-console.log("Copied Employee:", copiedEmployee); // Copied Employee: { name: "Naveen", role: "Web Developer", salary: "6LPA" }
+// // Test the function
+// company("Naveen", "HTML", "CSS", "JS", "React");
+// // Output:
+// // Employee Name: Naveen
+// // Skills: ["HTML", "CSS", "JS", "React"]
+// // Total Skill Count: 4 
 
 
-// Task 23 — Custom Function
-// Create function:
-// function company(name,...skills)
-// Tasks:
-// Print employee name
-// Print all skills
-// Print total skill count
-// Example Call:
-// company("Naveen","HTML","CSS","JS","React")
-function company(name, ...skills) {
-    console.log("Employee Name:", name);
-    console.log("Skills:", skills);
-    console.log("Total Skill Count:", skills.length);
-}
-// Test the function
-company("Naveen", "HTML", "CSS", "JS", "React");
-// Output:
-// Employee Name: Naveen
-// Skills: ["HTML", "CSS", "JS", "React"]
-// Total Skill Count: 4 
+// // Task 24 — Array Analyzer
+// // Create array:
+// // let data = [1,2,3,4,5,6,7,8,9,10]
+// // Tasks:
+// // Extract first 5 values
+// // Reverse array
+// // Check number 7 exists or not
+// // Find index of 10
+
+// //let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let firstFive = data.slice(0, 5);
+// console.log("First 5 values:", firstFive);
+// data.reverse();
+// console.log("Reversed array:", data);
+// console.log("Number 7 exists:", data.includes(7));
+// console.log("Index of 10:", data.indexOf(10));
 
 
-// Task 24 — Array Analyzer
-// Create array:
-// let data = [1,2,3,4,5,6,7,8,9,10]
-// Tasks:
-// Extract first 5 values
-// Reverse array
-// Check number 7 exists or not
-// Find index of 10
-
-//let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let firstFive = data.slice(0, 5);
-console.log("First 5 values:", firstFive);
-data.reverse();
-console.log("Reversed array:", data);
-console.log("Number 7 exists:", data.includes(7));
-console.log("Index of 10:", data.indexOf(10));
-
-
-// Task 25 — Complete Challenge
-// Create:
+// // Task 25 — Complete Challenge
+// // Create:
+// // let users = [
+// //   {name:"Rahul",role:"Developer"},
+// //   {name:"Ajay",role:"Designer"},
+// //   {name:"Kumar",role:"Tester"}
+// // ]
+// // Tasks:
+// // Add new user
+// // Remove last user
+// // Merge another array of users
+// // Print all user names only
+// // Reverse final array
 // let users = [
-//   {name:"Rahul",role:"Developer"},
-//   {name:"Ajay",role:"Designer"},
-//   {name:"Kumar",role:"Tester"}
+//     { name: "Rahul", role: "Developer" },
+//     { name: "Ajay", role: "Designer" },
+//     { name: "Kumar", role: "Tester" }
+// ];
+// users.push({ name: "Vijay", role: "Manager" });
+// users.pop();
+// let newUsers = [
+//     { name: "Suresh", role: "Developer" },
+//     { name: "Ramesh", role: "Designer" }
+// ];
+// users = users.concat(newUsers);
+// let userNames = users.map(user => user.name);
+// console.log("User Names:", userNames);
+// users.reverse();
+// console.log("Reversed Users:", users);
+
+           //TASK 6
+
+// 1. Employee Bonus Filter
+// Concept:
+// filter(), map()
+// Task:
+// You have employee salaries.
+// Find employees whose salary is greater than 300000 and print:
+// "Congrats <name>"
+// Input:
+// let employees = [
+//   {name:"john", salary:200000},
+//   {name:"rahul", salary:500000},
+//   {name:"siva", salary:700000}
 // ]
-// Tasks:
-// Add new user
-// Remove last user
-// Merge another array of users
-// Print all user names only
-// Reverse final array
-let users = [
-    { name: "Rahul", role: "Developer" },
-    { name: "Ajay", role: "Designer" },
-    { name: "Kumar", role: "Tester" }
+// Expected Output:
+// Congrats rahul
+// Congrats siva 
+
+let employees = [
+    { name: "john", salary: 200000 },
+    { name: "rahul", salary: 500000 },
+    { name: "siva", salary: 700000 }
 ];
-users.push({ name: "Vijay", role: "Manager" });
-users.pop();
-let newUsers = [
-    { name: "Suresh", role: "Developer" },
-    { name: "Ramesh", role: "Designer" }
+employees.filter(employee => employee.salary > 300000)
+    .forEach(employee => console.log("Congrats " + employee.name));
+
+// 2. Shopping Cart Total
+// Concept:
+// reduce()
+// Task:
+// Calculate total bill amount.
+// Input:
+// let cart = [1200, 3400, 500, 999]
+// Expected Output:
+// 6099
+
+let cart = [1200, 3400, 500, 999];
+let totalBill = cart.reduce((total, item) => total + item, 0);
+console.log(totalBill); // 6099
+
+// 3. Login Username Formatter
+// Concept:
+// slice(), toUpperCase()
+// Task:
+// Convert first letter into capital.
+// Input:
+// let user = "naveen"
+// Expected Output:
+// Naveen
+let user = "naveen";
+let formattedUser = user.charAt(0).toUpperCase() + user.slice(1);
+console.log(formattedUser); // Naveen
+
+// 4. OTP Checker
+// Concept:
+// includes()
+// Task:
+// Check whether OTP contains number 0.
+// Input:
+// let otp = "560890"
+// Expected Output:
+// Valid OTP
+// Else:
+// Invalid OTP
+let otp = "560890";
+if (otp.includes("0")) {
+    console.log("Valid OTP");
+} else {
+    console.log("Invalid OTP");
+} // Valid OTP
+
+
+// 5. Food Delivery App
+// Concept:
+// push(), pop()
+// Task:
+// Add new order and remove delivered order.
+// Input:
+// let orders = ["burger","pizza"]
+// Process:
+// Add "shawarma"
+// Remove last order
+// Expected Output:
+// ["burger","pizza"]
+let orders = ["burger", "pizza"];
+orders.push("shawarma");
+orders.pop();
+console.log(orders); // ["burger", "pizza"]
+
+
+// 6. Attendance Checker
+// Concept:
+// every()
+// Task:
+// Check whether all students passed.
+// Input:
+// let marks = [40,50,70,80]
+// Condition:
+// mark >= 35
+// Expected Output:
+// true
+let marks = [40, 50, 70, 80];
+let allPassed = marks.every(mark => mark >= 35);
+console.log(allPassed); // true
+
+
+// 7. Find VIP Customer
+// Concept:
+// find()
+// Task:
+// Find first customer whose purchase is greater than 10000.
+// Input:
+// let customer = [
+//   {name:"arun", purchase:5000},
+//   {name:"vijay", purchase:15000},
+//   {name:"surya", purchase:25000}
+// ]
+// Expected Output:
+// vijay
+
+let customers = [
+    { name: "arun", purchase: 5000 },
+    { name: "vijay", purchase: 15000 },
+    { name: "surya", purchase: 25000 }
 ];
-users = users.concat(newUsers);
-let userNames = users.map(user => user.name);
-console.log("User Names:", userNames);
-users.reverse();
-console.log("Reversed Users:", users);
+let vipCustomer = customers.find(customer => customer.purchase > 10000);
+console.log(vipCustomer.name); // vijay
+
+
+// 8. Reverse Chat Message
+// Concept:
+// split(), reverse(), join()
+// Task:
+// Reverse the message.
+// Input:
+// let msg = "hello"
+// Expected Output:
+// olleh
+let msg = "hello";
+let reversedMsg = msg.split("").reverse().join("");
+console.log(reversedMsg); // olleh
+
+
+// 9. Remove Duplicate Product
+// Concept:
+// indexOf()
+// Task:
+// Find position of "mobile".
+// Input:
+// let products = ["tv","laptop","mobile","watch"]
+// Expected Output:
+// 2
+let products = ["tv", "laptop", "mobile", "watch"];
+let mobileIndex = products.indexOf("mobile");
+console.log(mobileIndex); // 2
+
+
+// 10. Student Rank Sort
+// Concept:
+// sort()
+// Task:
+// Sort marks ascending order.
+// Input:
+// let marks = [99,45,12,67,89]
+// Expected Output:
+// [12,45,67,89,99]
+let marks2 = [99, 45, 12, 67, 89];
+marks2.sort((a, b) => a - b);
+console.log(marks2); // [12, 45, 67, 89, 99]
+
+
+// 11. Movie Search
+// Concept:
+// some()
+// Task:
+// Check whether "Leo" movie exists.
+// Input:
+// let movies = ["Jailer","Leo","Vikram"]
+// Expected Output:
+// true
+let movies = ["Jailer", "Leo", "Vikram"];
+let hasLeo = movies.some(movie => movie === "Leo");
+console.log(hasLeo); // true
+
+
+// 12. Hide Mobile Number
+// Concept:
+// slice()
+// Task:
+// Show only last 4 digits.
+// Input:
+// let num = "6383366774"
+// Expected Output:
+// 6774
+let num = "6383366774";
+let lastFourDigits = num.slice(-4);
+console.log(lastFourDigits); // 6774
+
+
+// 13. Online Exam Result
+// Concept:
+// ternary operator
+// Task:
+// If mark >= 35 print "Pass" else "Fail".
+// Input:
+// let mark = 78
+// Expected Output:
+// Pass
+let mark = 78;
+let result = mark >= 35 ? "Pass" : "Fail";
+console.log(result); // Pass
+
+
+// 14. Cab Booking Price
+// Concept:
+// function, return
+// Task:
+// Create function for total fare.
+// Input:
+// baseFare = 100
+// extraKm = 50
+// Expected Output:
+// 150
+function calculateFare(baseFare, extraKm) {
+    return baseFare + extraKm;
+}
+let baseFare = 100;
+let extraKm = 50;
+let totalFare = calculateFare(baseFare, extraKm);
+console.log(totalFare); // 150
+
+// 15. Instagram Hashtag Generator
+// Concept:
+// replaceAll()
+// Task:
+// Convert spaces into _
+// Input:
+// let tag = "web developer"
+// Expected Output:
+// web_developer
+let tag = "web developer";
+let hashtag = tag.replaceAll(" ", "_");
+console.log(hashtag); // web_developer
+
+
+// 16. Netflix Kids Content
+// Concept:
+// filter()
+// Task:
+// Get only movies below age 18.
+// Input:
+// let movies = [
+//   {name:"A", age:13},
+//   {name:"B", age:18},
+//   {name:"C", age:10}
+// ]
+// Expected Output:
+// A
+// C
+let movies2 = [
+    { name: "A", age: 13 },
+    { name: "B", age: 18 },
+    { name: "C", age: 10 }
+];
+let kidsMovies = movies2.filter(movie => movie.age < 18);
+kidsMovies.forEach(movie => console.log(movie.name)); // A C
+
+
+// 17. E-commerce Product Search
+// Concept:
+// startsWith()
+// Task:
+// Check whether product starts with "i".
+// Input:
+// let product = "iphone"
+// Expected Output:
+// true
+let product = "iphone";
+let startsWithI = product.startsWith("i");
+console.log(startsWithI); // true
+
+
+// 18. WhatsApp Group Names
+// Concept:
+// forEach()
+// Task:
+// Print all group names with numbering.
+// Input:
+// let groups = ["office","friends","family"]
+// Expected Output:
+// 1 office
+// 2 friends
+// 3 family
+let groups = ["office", "friends", "family"];
+groups.forEach((group, index) => {
+    console.log((index + 1) + " " + group);
+});
+
+
+// 19. Salary Highest Finder
+// Concept:
+// reduce()
+// Task:
+// Find highest salary.
+// Input:
+// let salary = [20000,50000,70000,10000]
+// Expected Output:
+// 70000
+let salary = [20000, 50000, 70000, 10000];
+let highestSalary = salary.reduce((max, current) => current > max ? current : max, 0);
+console.log(highestSalary); // 70000
+
+
+// 20. Password Security Checker
+// Concept:
+// length, includes()
+// Task:
+// Password should:
+// contain @
+// minimum 8 characters
+// Input:
+// let password = "navi@123"
+// Expected Output:
+// Strong Password
+let password = "navi@123";
+if (password.length >= 8 && password.includes("@")) {
+    console.log("Strong Password");
+} else {
+    console.log("Weak Password");
+} // Strong Password
+
 
 
 
