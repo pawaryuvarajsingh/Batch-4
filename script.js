@@ -764,283 +764,665 @@
 // // ok
                    // Task 4
 
-// Task 1 — Smart Attendance Checker
-// Concept:
-// if else
-// logical operator
-// function
-// Scenario:
-// A student can enter exam hall only if:
-// attendance >= 75
-// fees paid = true
-// Expected:
-// Allowed for Exam
-// Otherwise:
-// Not Allowed
-function checkAttendance(attendance, feesPaid) {
-    if (attendance >= 75 && feesPaid) {
-        console.log("Allowed for Exam");
-    } else {
-        console.log("Not Allowed");
-    }
+// // Task 1 — Smart Attendance Checker
+// // Concept:
+// // if else
+// // logical operator
+// // function
+// // Scenario:
+// // A student can enter exam hall only if:
+// // attendance >= 75
+// // fees paid = true
+// // Expected:
+// // Allowed for Exam
+// // Otherwise:
+// // Not Allowed
+// function checkAttendance(attendance, feesPaid) {
+//     if (attendance >= 75 && feesPaid) {
+//         console.log("Allowed for Exam");
+//     } else {
+//         console.log("Not Allowed");
+//     }
+// }
+
+// // Test the function
+// checkAttendance(80, true);  // Allowed for Exam
+// checkAttendance(70, true);  // Not Allowed
+// checkAttendance(80, false); // Not Allowed
+// checkAttendance(70, false); // Not Allowed
+
+// // Task 2 — Mobile Password Strength Checker
+// // Concept:
+// // string
+// // conditions
+// // Requirement:
+// // Check password:
+// // minimum 8 characters
+// // should contain number
+// // should contain uppercase
+// // Example:
+// // Abc12345
+// // Output:
+// // Strong Password
+// function checkPasswordStrength(password) {
+//     const hasMinimumLength = password.length >= 8;
+//     const hasNumber = /\d/.test(password);
+//     const hasUppercase = /[A-Z]/.test(password);
+
+//     if (hasMinimumLength && hasNumber && hasUppercase) {
+//         console.log("Strong Password");
+//     } else {
+//         console.log("Weak Password");
+//     }
+// }
+
+// // Test the function
+// checkPasswordStrength("Abc12345"); // Strong Password
+// checkPasswordStrength("abc12345"); // Weak Password
+// checkPasswordStrength("Abcdefgh"); // Weak Password
+// checkPasswordStrength("12345678"); // Weak Password
+
+// // Task 3 — Find Second Largest Number
+// // Concept:
+// // loop
+// // conditions
+// // variables
+// // Input:
+// // [10,50,80,20,90,70]
+// // Output:
+// // 80
+// function findSecondLargest(arr) {
+//     let largest = -Infinity;
+//     let secondLargest = -Infinity;
+//     for (let num of arr) {
+//         if (num > largest) {
+//             secondLargest = largest;
+//             largest = num;
+//         } else if (num > secondLargest && num < largest) {
+//             secondLargest = num;
+//         }
+//     }
+//     return secondLargest;
+// }
+
+// // Test the function
+// const numbers = [10, 50, 80, 20, 90, 70];
+// console.log(findSecondLargest(numbers)); // 80
+
+// // Task 4 — Bus Seat Booking System
+// // Concept:
+// // array
+// // loop
+// // conditions
+// // Requirement:
+// // Create 10 seats.
+// // If seat booked:
+// // Seat Already Booked
+// // Else:
+// // Seat Booked Successfully
+// const seats = new Array(10).fill(false); // false indicates seat is available
+
+// function bookSeat(seatNumber) {
+//     if (seatNumber < 1 || seatNumber > 10) {
+//         console.log("Invalid seat number");
+//         return;
+//     }
+//     if (seats[seatNumber - 1]) {
+//         console.log("Seat Already Booked");
+//     } else {
+//         seats[seatNumber - 1] = true;
+//         console.log("Seat Booked Successfully");
+//     }
+// }
+
+// // Test the function
+// bookSeat(3); // Seat Booked Successfully
+// bookSeat(3); // Seat Already Booked
+// bookSeat(11); // Invalid seat number
+
+// // Task 5 — ATM Cash Withdraw Logic
+// // Concept:
+// // function
+// // return
+// // conditions
+// // Rules:
+// // balance = 10000
+// // user cannot withdraw more than balance
+// // minimum balance should maintain 1000
+// // Example:
+// // Withdraw:
+// // 9500
+// // Output:
+// // Insufficient Balance
+// function withdrawCash(amount) {
+//     const balance = 10000;
+//     const minimumBalance = 1000;
+//     if (amount > balance) {
+//         console.log("Insufficient Balance");
+//     } else if (balance - amount < minimumBalance) {
+//         console.log("Minimum Balance should be maintained");
+//     } else {
+//         console.log("Cash Withdrawn Successfully");
+//     }
+// }
+
+// // Test the function
+// withdrawCash(9500); // Insufficient Balance
+// withdrawCash(9000); // Minimum Balance should be maintained
+// withdrawCash(8000); // Cash Withdrawn Successfully
+
+// // Task 6 — Product Search Engine
+// // Concept:
+// // array
+// // for of
+// // string methods
+// // Requirement:
+// // Search product from array.
+// // Example:
+// // ["iphone","samsung","realme","oppo"]
+// // Search:
+// // realme
+// // Output:
+// // Product Found
+// function searchProduct(products, searchTerm) {
+//     for (let product of products) {
+//         if (product.toLowerCase() === searchTerm.toLowerCase()) {
+//             console.log("Product Found");
+//             return;
+//         }
+//     }
+//     console.log("Product Not Found");
+// }
+
+// // Test the function
+// const productList = ["iphone", "samsung", "realme", "oppo"];
+// searchProduct(productList, "realme"); // Product Found
+// searchProduct(productList, "nokia");  // Product Not Found
+
+// // Task 7 — Voting Eligibility System
+// // Concept:
+// // nested if
+// // logical operators
+// // Rules:
+// // Person can vote only if:
+// // age >= 18
+// // has voter id
+// // citizenship = Indian
+
+// function checkVotingEligibility(age, hasVoterId, citizenship) {
+//     if (age >= 18) {
+//         if (hasVoterId) {
+//             if (citizenship.toLowerCase() === "indian") {
+//                 console.log("Eligible to Vote");
+//             } else {
+//                 console.log("Not Eligible: Citizenship must be Indian");
+//             }
+//         } else {
+//             console.log("Not Eligible: Voter ID required");
+//         }
+//     } else {
+//         console.log("Not Eligible: Age must be 18 or above");
+//     }
+// }
+
+// // Test the function
+// checkVotingEligibility(20, true, "Indian"); // Eligible to Vote
+// checkVotingEligibility(17, true, "Indian"); // Not Eligible: Age must be 18 or above
+// checkVotingEligibility(20, false, "Indian"); // Not Eligible: Voter ID required
+// checkVotingEligibility(20, true, "American"); // Not Eligible: Citizenship must be Indian
+
+// // Task 8 — Online Food Order Bill
+// // Concept:
+// // function
+// // parameters
+// // arithmetic operators
+// // Requirement:
+// // Calculate:
+// // food price
+// // GST
+// // delivery charge
+// // discount
+// // Final Output:
+// // Total Bill : ₹450
+// function calculateBill(foodPrice, gstRate, deliveryCharge, discount) {
+//     const gstAmount = foodPrice * (gstRate / 100);
+//     const totalBeforeDiscount = foodPrice + gstAmount + deliveryCharge;
+//     const totalBill = totalBeforeDiscount - discount;
+//     console.log("Total Bill: ₹" + totalBill);
+// }
+
+// // Test the function
+// calculateBill(400, 5, 50, 20); // Total Bill: ₹450
+// calculateBill(300, 10, 30, 15); // Total Bill: ₹345
+
+// // Task 9 — Reverse Word Without reverse()
+// // Concept:
+// // loop
+// // string
+// // Input:
+// // javascript
+// // Output:
+// // tpircsavaj
+// function reverseWord(word) {
+//     let reversed = "";
+//     for (let i = word.length - 1; i >= 0; i--) {
+//         reversed += word[i];
+//     }
+//     return reversed;
+// }
+
+// // Test the function
+// console.log(reverseWord("javascript")); // tpircsavaj
+// console.log(reverseWord("hello"));      // olleh
+
+// // Task 10 — Mini Instagram Like System
+// // Concept:
+// // variable
+// // function
+// // ternary operator
+// // Requirement:
+// // When user clicks like:
+// // Liked ❤️
+// // Else:
+// // Like 🤍
+// // Also maintain total likes count.
+// let totalLikes = 0;
+
+// function toggleLike(isLiked) {
+//     if (isLiked) {
+//         totalLikes++;
+//         console.log("Liked ❤️");
+//     } else {
+//         totalLikes = Math.max(0, totalLikes - 1);
+//         console.log("Like 🤍");
+//     }
+//     console.log("Total Likes: " + totalLikes);
+// }
+// // Test the function
+// toggleLike(true);  // Liked ❤️ Total Likes: 1
+// toggleLike(true);  // Liked ❤️ Total Likes: 2
+// toggleLike(false); // Like 🤍 Total Likes: 1
+// toggleLike(false); // Like 🤍 Total Likes: 0
+
+           //Task
+
+// JavaScript Array & Spread Operator Tasks
+// Beginner Level Tasks
+// Task 1 — Spread Operator
+// Create 2 arrays:
+// let frontEnd = ["HTML","CSS"]
+// let backEnd = ["Node","MongoDB"]
+// Using spread operator:
+// Merge both arrays
+// Print the merged array
+let frontEnd = ["HTML", "CSS"];
+let backEnd = ["Node", "MongoDB"];
+let fullStack = [...frontEnd, ...backEnd];
+console.log(fullStack); // ["HTML", "CSS", "Node", "MongoDB"] 
+
+// Task 2 — Copy Array
+// Create:
+// let original = [1,2,3]
+// Using spread operator:
+// Copy array into another variable
+// Add 4 into copied array
+// Print both arrays
+// Check original array changed or not
+
+let original = [1, 2, 3];
+let copied = [...original];
+copied.push(4);
+console.log("Original Array:", original); // Original Array: [1, 2, 3]
+console.log("Copied Array:", copied);     // Copied Array: [1, 2, 3, 4]
+
+// Task 3 — Object Merge
+// Create 2 objects:
+// let student1 = {
+//   name : "Rahul"
+// }
+
+// let student2 = {
+//   role : "Developer"
+// }
+// Using spread operator:
+// Merge objects
+// Print result
+
+let student1 = {
+    name: "Rahul"
+};
+let student2 = {
+    role: "Developer"
+};
+let mergedStudent = { ...student1, ...student2 };
+console.log(mergedStudent); // { name: "Rahul", role: "Developer" } 
+
+
+// Task 4 — Rest Operator
+// Create function:
+// function total(a,b,...rest)
+// Tasks:
+// Print a
+// Print b
+// Print remaining values
+// Print total count of remaining values
+// Call function with 8 values.
+
+function total(a, b, ...rest) {
+    console.log("a:", a);
+    console.log("b:", b);
+    console.log("Remaining values:", rest);
+    console.log("Count of remaining values:", rest.length);
 }
-
 // Test the function
-checkAttendance(80, true);  // Allowed for Exam
-checkAttendance(70, true);  // Not Allowed
-checkAttendance(80, false); // Not Allowed
-checkAttendance(70, false); // Not Allowed
-
-// Task 2 — Mobile Password Strength Checker
-// Concept:
-// string
-// conditions
-// Requirement:
-// Check password:
-// minimum 8 characters
-// should contain number
-// should contain uppercase
-// Example:
-// Abc12345
+total(1, 2, 3, 4, 5, 6, 7, 8);
 // Output:
-// Strong Password
-function checkPasswordStrength(password) {
-    const hasMinimumLength = password.length >= 8;
-    const hasNumber = /\d/.test(password);
-    const hasUppercase = /[A-Z]/.test(password);
+// a: 1
+// b: 2
+// Remaining values: [3, 4, 5, 6, 7, 8]
+// Count of remaining values: 6
 
-    if (hasMinimumLength && hasNumber && hasUppercase) {
-        console.log("Strong Password");
-    } else {
-        console.log("Weak Password");
-    }
+// Destructuring Tasks
+// Task 5 — Array Destructuring
+// Create:
+// let colors = ["red","green","blue","yellow"]
+// Tasks:
+// Store all values into separate variables using destructuring
+// Print only blue color
+let colors = ["red", "green", "blue", "yellow"];
+let [red, green, blue, yellow] = colors;
+console.log("Blue color:", blue); // Blue color: blue
+
+// Task 6 — Nested Array Destructuring
+// Create:
+// let data = [1,[2,[3,[4]]]]
+// Tasks:
+// Access all values using destructuring only
+// Print:
+// 1 2 3 4
+let data = [1, [2, [3, [4]]]];
+let [one, [two, [three, [four]]]] = data;
+console.log(one, two, three, four); // 1 2 3 4 
+
+// Task 7 — Object Destructuring
+// Create:
+// let mobile = {
+//   brand : "Samsung",
+//   price : 20000,
+//   color : "black"
+// }
+// Tasks:
+// Destructure all properties
+// Print:
+// Samsung black
+
+let mobile = {
+    brand: "Samsung",
+    price: 20000,
+    color: "black"
+};
+let { brand, price, color } = mobile;
+console.log(brand, color); // Samsung black
+
+// Array Manipulation Tasks
+// Task 8 — push() & pop()
+// Create:
+// let numbers = [1,2,3]
+// Tasks:
+// Add 4,5,6 using push
+// Remove last value using pop
+// Print final array
+let numbers = [1, 2, 3];
+numbers.push(4, 5, 6);
+numbers.pop();
+console.log(numbers); // [1, 2, 3, 4, 5]
+
+// Task 9 — shift() & unshift()
+// Create:
+// let fruits = ["banana","orange"]
+// Tasks:
+// Add "apple" in first position
+// Remove first value
+// Print final result
+let fruits = ["banana", "orange"];
+fruits.unshift("apple");
+fruits.shift();
+console.log(fruits); // ["banana", "orange"]
+
+// Task 10 — splice()
+// Create:
+// let arr = [1,2,30,40,5,6]
+// Tasks:
+// Remove 30 and 40
+// Add 3 and 4
+// Print final array
+// Expected Output:
+// [1,2,3,4,5,6]
+let arr = [1, 2, 30, 40, 5, 6];
+arr.splice(2, 2, 3, 4);
+console.log(arr); // [1, 2, 3, 4, 5, 6]
+
+// Task 11 — concat()
+// Create 2 arrays:
+// let a = [1,2]
+// let b = [3,4]
+// Tasks:
+// Merge using concat
+// Add extra values 5,6
+// Print result
+let a = [1, 2];
+let b = [3, 4];
+let merged = a.concat(b, [5, 6]);
+console.log(merged); // [1, 2, 3, 4, 5, 6]
+
+// Task 12 — slice()
+// Create:
+// let marks = [10,20,30,40,50,60]
+// Tasks:
+// Extract only 30,40,50
+// Print extracted array
+let marks = [10, 20, 30, 40, 50, 60];
+let extracted = marks.slice(2, 5);
+console.log(extracted); // [30, 40, 50]
+
+// Task 13 — flat()
+// Create:
+// let nest = [1,[2,[3,[4,[5]]]]]
+// Tasks:
+// Convert nested array into single array
+// Print result
+let nest = [1, [2, [3, [4, [5]]]]];
+let flatArray = nest.flat(Infinity);
+console.log(flatArray); // [1, 2, 3, 4, 5]
+
+// Task 14 — fill()
+// Create:
+// let arr = [1,2,3,4,5]
+// Tasks:
+// Replace last 2 values with "done"
+// Print array
+let arr2 = [1, 2, 3, 4, 5];
+arr2.fill("done", 3);
+console.log(arr2); // [1, 2, 3, "done", "done"]
+
+// Task 15 — includes()
+// Create:
+// let values = [10,20,30,40]
+// Tasks:
+// Check 20 exists or not
+// Check 100 exists or not
+
+let values = [10, 20, 30, 40];
+console.log(values.includes(20)); // true
+console.log(values.includes(100)); // false
+
+// Task 16 — indexOf()
+// Create:
+// let arr = [1,2,3,4,3,2]
+// Tasks:
+// Find first index of 3
+// Find first index of 2
+// Task 17 — lastIndexOf()
+// Using same array:
+// let arr = [1,2,3,4,3,2]
+// Tasks:
+// Find last index of 3
+// Find last index of 2
+let arr3 = [1, 2, 3, 4, 3, 2];
+console.log(arr3.indexOf(3)); // 2
+console.log(arr3.indexOf(2)); // 1
+console.log(arr3.lastIndexOf(3)); // 4
+console.log(arr3.lastIndexOf(2)); // 5
+
+
+// Task 18 — sort()
+// Create:
+// let nums = [100,2,55,1,9]
+// Tasks:
+// Sort array
+// Observe wrong output
+// Then solve using compare function
+let nums = [100, 2, 55, 1, 9];
+nums.sort();
+console.log(nums); // [1, 100, 2, 55, 9] - Wrong output
+
+
+// Task 19 — reverse()
+// Create:
+// let letters = ["a","b","c","d"]
+// Tasks:
+// Reverse array
+// Print output
+// Real-Time Logical Tasks
+let letters = ["a", "b", "c", "d"];
+letters.reverse();
+console.log(letters); // ["d", "c", "b", "a"]
+
+// Task 20 — Student Management
+// Create student array:
+// let students = ["Rahul","Ajay","Kumar"]
+// Tasks:
+// Add new student
+// Remove one student
+// Replace one student name
+// Reverse student list
+let students = ["Rahul", "Ajay", "Kumar"];
+students.push("Vijay");
+students.splice(1, 1); // Remove "Ajay"
+students[1] = "Suresh";
+students.reverse();
+console.log(students); // ["Vijay", "Suresh", "Rahul"]
+
+// Task 21 — Shopping Cart
+// Create:
+// let cart = ["Shoes","Watch","Phone"]
+// Tasks:
+// Add "Laptop"
+// Remove "Watch"
+// Check "Phone" exists or not
+// Print total cart items
+let cart = ["Shoes", "Watch", "Phone"];
+cart.push("Laptop");
+cart.splice(cart.indexOf("Watch"), 1);
+console.log(cart.includes("Phone")); // true
+console.log("Total cart items:", cart.length); // Total cart items: 3
+
+// Task 22 — Employee Database
+// Create object:
+// let employee = {
+//   name : "Naveen",
+//   role : "Web Developer",
+//   salary : "5LPA"
+// }
+// Tasks:
+// Destructure all values
+// Copy object using spread operator
+// Change salary in copied object only
+// Check original object changed or not
+// Advanced Logical Tasks
+let employee = {
+    name: "Naveen",
+    role: "Web Developer",
+    salary: "5LPA"
+};
+let { name, role, salary } = employee;
+let copiedEmployee = { ...employee };
+copiedEmployee.salary = "6LPA";
+console.log("Original Employee:", employee); // Original Employee: { name: "Naveen", role: "Web Developer", salary: "5LPA" }
+console.log("Copied Employee:", copiedEmployee); // Copied Employee: { name: "Naveen", role: "Web Developer", salary: "6LPA" }
+
+
+// Task 23 — Custom Function
+// Create function:
+// function company(name,...skills)
+// Tasks:
+// Print employee name
+// Print all skills
+// Print total skill count
+// Example Call:
+// company("Naveen","HTML","CSS","JS","React")
+function company(name, ...skills) {
+    console.log("Employee Name:", name);
+    console.log("Skills:", skills);
+    console.log("Total Skill Count:", skills.length);
 }
-
 // Test the function
-checkPasswordStrength("Abc12345"); // Strong Password
-checkPasswordStrength("abc12345"); // Weak Password
-checkPasswordStrength("Abcdefgh"); // Weak Password
-checkPasswordStrength("12345678"); // Weak Password
-
-// Task 3 — Find Second Largest Number
-// Concept:
-// loop
-// conditions
-// variables
-// Input:
-// [10,50,80,20,90,70]
+company("Naveen", "HTML", "CSS", "JS", "React");
 // Output:
-// 80
-function findSecondLargest(arr) {
-    let largest = -Infinity;
-    let secondLargest = -Infinity;
-    for (let num of arr) {
-        if (num > largest) {
-            secondLargest = largest;
-            largest = num;
-        } else if (num > secondLargest && num < largest) {
-            secondLargest = num;
-        }
-    }
-    return secondLargest;
-}
+// Employee Name: Naveen
+// Skills: ["HTML", "CSS", "JS", "React"]
+// Total Skill Count: 4 
 
-// Test the function
-const numbers = [10, 50, 80, 20, 90, 70];
-console.log(findSecondLargest(numbers)); // 80
 
-// Task 4 — Bus Seat Booking System
-// Concept:
-// array
-// loop
-// conditions
-// Requirement:
-// Create 10 seats.
-// If seat booked:
-// Seat Already Booked
-// Else:
-// Seat Booked Successfully
-const seats = new Array(10).fill(false); // false indicates seat is available
+// Task 24 — Array Analyzer
+// Create array:
+// let data = [1,2,3,4,5,6,7,8,9,10]
+// Tasks:
+// Extract first 5 values
+// Reverse array
+// Check number 7 exists or not
+// Find index of 10
 
-function bookSeat(seatNumber) {
-    if (seatNumber < 1 || seatNumber > 10) {
-        console.log("Invalid seat number");
-        return;
-    }
-    if (seats[seatNumber - 1]) {
-        console.log("Seat Already Booked");
-    } else {
-        seats[seatNumber - 1] = true;
-        console.log("Seat Booked Successfully");
-    }
-}
+//let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let firstFive = data.slice(0, 5);
+console.log("First 5 values:", firstFive);
+data.reverse();
+console.log("Reversed array:", data);
+console.log("Number 7 exists:", data.includes(7));
+console.log("Index of 10:", data.indexOf(10));
 
-// Test the function
-bookSeat(3); // Seat Booked Successfully
-bookSeat(3); // Seat Already Booked
-bookSeat(11); // Invalid seat number
 
-// Task 5 — ATM Cash Withdraw Logic
-// Concept:
-// function
-// return
-// conditions
-// Rules:
-// balance = 10000
-// user cannot withdraw more than balance
-// minimum balance should maintain 1000
-// Example:
-// Withdraw:
-// 9500
-// Output:
-// Insufficient Balance
-function withdrawCash(amount) {
-    const balance = 10000;
-    const minimumBalance = 1000;
-    if (amount > balance) {
-        console.log("Insufficient Balance");
-    } else if (balance - amount < minimumBalance) {
-        console.log("Minimum Balance should be maintained");
-    } else {
-        console.log("Cash Withdrawn Successfully");
-    }
-}
+// Task 25 — Complete Challenge
+// Create:
+// let users = [
+//   {name:"Rahul",role:"Developer"},
+//   {name:"Ajay",role:"Designer"},
+//   {name:"Kumar",role:"Tester"}
+// ]
+// Tasks:
+// Add new user
+// Remove last user
+// Merge another array of users
+// Print all user names only
+// Reverse final array
+let users = [
+    { name: "Rahul", role: "Developer" },
+    { name: "Ajay", role: "Designer" },
+    { name: "Kumar", role: "Tester" }
+];
+users.push({ name: "Vijay", role: "Manager" });
+users.pop();
+let newUsers = [
+    { name: "Suresh", role: "Developer" },
+    { name: "Ramesh", role: "Designer" }
+];
+users = users.concat(newUsers);
+let userNames = users.map(user => user.name);
+console.log("User Names:", userNames);
+users.reverse();
+console.log("Reversed Users:", users);
 
-// Test the function
-withdrawCash(9500); // Insufficient Balance
-withdrawCash(9000); // Minimum Balance should be maintained
-withdrawCash(8000); // Cash Withdrawn Successfully
 
-// Task 6 — Product Search Engine
-// Concept:
-// array
-// for of
-// string methods
-// Requirement:
-// Search product from array.
-// Example:
-// ["iphone","samsung","realme","oppo"]
-// Search:
-// realme
-// Output:
-// Product Found
-function searchProduct(products, searchTerm) {
-    for (let product of products) {
-        if (product.toLowerCase() === searchTerm.toLowerCase()) {
-            console.log("Product Found");
-            return;
-        }
-    }
-    console.log("Product Not Found");
-}
 
-// Test the function
-const productList = ["iphone", "samsung", "realme", "oppo"];
-searchProduct(productList, "realme"); // Product Found
-searchProduct(productList, "nokia");  // Product Not Found
 
-// Task 7 — Voting Eligibility System
-// Concept:
-// nested if
-// logical operators
-// Rules:
-// Person can vote only if:
-// age >= 18
-// has voter id
-// citizenship = Indian
-
-function checkVotingEligibility(age, hasVoterId, citizenship) {
-    if (age >= 18) {
-        if (hasVoterId) {
-            if (citizenship.toLowerCase() === "indian") {
-                console.log("Eligible to Vote");
-            } else {
-                console.log("Not Eligible: Citizenship must be Indian");
-            }
-        } else {
-            console.log("Not Eligible: Voter ID required");
-        }
-    } else {
-        console.log("Not Eligible: Age must be 18 or above");
-    }
-}
-
-// Test the function
-checkVotingEligibility(20, true, "Indian"); // Eligible to Vote
-checkVotingEligibility(17, true, "Indian"); // Not Eligible: Age must be 18 or above
-checkVotingEligibility(20, false, "Indian"); // Not Eligible: Voter ID required
-checkVotingEligibility(20, true, "American"); // Not Eligible: Citizenship must be Indian
-
-// Task 8 — Online Food Order Bill
-// Concept:
-// function
-// parameters
-// arithmetic operators
-// Requirement:
-// Calculate:
-// food price
-// GST
-// delivery charge
-// discount
-// Final Output:
-// Total Bill : ₹450
-function calculateBill(foodPrice, gstRate, deliveryCharge, discount) {
-    const gstAmount = foodPrice * (gstRate / 100);
-    const totalBeforeDiscount = foodPrice + gstAmount + deliveryCharge;
-    const totalBill = totalBeforeDiscount - discount;
-    console.log("Total Bill: ₹" + totalBill);
-}
-
-// Test the function
-calculateBill(400, 5, 50, 20); // Total Bill: ₹450
-calculateBill(300, 10, 30, 15); // Total Bill: ₹345
-
-// Task 9 — Reverse Word Without reverse()
-// Concept:
-// loop
-// string
-// Input:
-// javascript
-// Output:
-// tpircsavaj
-function reverseWord(word) {
-    let reversed = "";
-    for (let i = word.length - 1; i >= 0; i--) {
-        reversed += word[i];
-    }
-    return reversed;
-}
-
-// Test the function
-console.log(reverseWord("javascript")); // tpircsavaj
-console.log(reverseWord("hello"));      // olleh
-
-// Task 10 — Mini Instagram Like System
-// Concept:
-// variable
-// function
-// ternary operator
-// Requirement:
-// When user clicks like:
-// Liked ❤️
-// Else:
-// Like 🤍
-// Also maintain total likes count.
-let totalLikes = 0;
-
-function toggleLike(isLiked) {
-    if (isLiked) {
-        totalLikes++;
-        console.log("Liked ❤️");
-    } else {
-        totalLikes = Math.max(0, totalLikes - 1);
-        console.log("Like 🤍");
-    }
-    console.log("Total Likes: " + totalLikes);
-}
-// Test the function
-toggleLike(true);  // Liked ❤️ Total Likes: 1
-toggleLike(true);  // Liked ❤️ Total Likes: 2
-toggleLike(false); // Like 🤍 Total Likes: 1
-toggleLike(false); // Like 🤍 Total Likes: 0
 
