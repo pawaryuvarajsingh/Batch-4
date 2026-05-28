@@ -1424,336 +1424,741 @@
 
            //TASK 6
 
-// 1. Employee Bonus Filter
-// Concept:
-// filter(), map()
-// Task:
-// You have employee salaries.
-// Find employees whose salary is greater than 300000 and print:
-// "Congrats <name>"
-// Input:
+// // 1. Employee Bonus Filter
+// // Concept:
+// // filter(), map()
+// // Task:
+// // You have employee salaries.
+// // Find employees whose salary is greater than 300000 and print:
+// // "Congrats <name>"
+// // Input:
+// // let employees = [
+// //   {name:"john", salary:200000},
+// //   {name:"rahul", salary:500000},
+// //   {name:"siva", salary:700000}
+// // ]
+// // Expected Output:
+// // Congrats rahul
+// // Congrats siva 
+
 // let employees = [
-//   {name:"john", salary:200000},
-//   {name:"rahul", salary:500000},
-//   {name:"siva", salary:700000}
-// ]
-// Expected Output:
-// Congrats rahul
-// Congrats siva 
+//     { name: "john", salary: 200000 },
+//     { name: "rahul", salary: 500000 },
+//     { name: "siva", salary: 700000 }
+// ];
+// employees.filter(employee => employee.salary > 300000)
+//     .forEach(employee => console.log("Congrats " + employee.name));
 
-let employees = [
-    { name: "john", salary: 200000 },
-    { name: "rahul", salary: 500000 },
-    { name: "siva", salary: 700000 }
-];
-employees.filter(employee => employee.salary > 300000)
-    .forEach(employee => console.log("Congrats " + employee.name));
+// // 2. Shopping Cart Total
+// // Concept:
+// // reduce()
+// // Task:
+// // Calculate total bill amount.
+// // Input:
+// // let cart = [1200, 3400, 500, 999]
+// // Expected Output:
+// // 6099
 
-// 2. Shopping Cart Total
-// Concept:
-// reduce()
+// let cart = [1200, 3400, 500, 999];
+// let totalBill = cart.reduce((total, item) => total + item, 0);
+// console.log(totalBill); // 6099
+
+// // 3. Login Username Formatter
+// // Concept:
+// // slice(), toUpperCase()
+// // Task:
+// // Convert first letter into capital.
+// // Input:
+// // let user = "naveen"
+// // Expected Output:
+// // Naveen
+// let user = "naveen";
+// let formattedUser = user.charAt(0).toUpperCase() + user.slice(1);
+// console.log(formattedUser); // Naveen
+
+// // 4. OTP Checker
+// // Concept:
+// // includes()
+// // Task:
+// // Check whether OTP contains number 0.
+// // Input:
+// // let otp = "560890"
+// // Expected Output:
+// // Valid OTP
+// // Else:
+// // Invalid OTP
+// let otp = "560890";
+// if (otp.includes("0")) {
+//     console.log("Valid OTP");
+// } else {
+//     console.log("Invalid OTP");
+// } // Valid OTP
+
+
+// // 5. Food Delivery App
+// // Concept:
+// // push(), pop()
+// // Task:
+// // Add new order and remove delivered order.
+// // Input:
+// // let orders = ["burger","pizza"]
+// // Process:
+// // Add "shawarma"
+// // Remove last order
+// // Expected Output:
+// // ["burger","pizza"]
+// let orders = ["burger", "pizza"];
+// orders.push("shawarma");
+// orders.pop();
+// console.log(orders); // ["burger", "pizza"]
+
+
+// // 6. Attendance Checker
+// // Concept:
+// // every()
+// // Task:
+// // Check whether all students passed.
+// // Input:
+// // let marks = [40,50,70,80]
+// // Condition:
+// // mark >= 35
+// // Expected Output:
+// // true
+// let marks = [40, 50, 70, 80];
+// let allPassed = marks.every(mark => mark >= 35);
+// console.log(allPassed); // true
+
+
+// // 7. Find VIP Customer
+// // Concept:
+// // find()
+// // Task:
+// // Find first customer whose purchase is greater than 10000.
+// // Input:
+// // let customer = [
+// //   {name:"arun", purchase:5000},
+// //   {name:"vijay", purchase:15000},
+// //   {name:"surya", purchase:25000}
+// // ]
+// // Expected Output:
+// // vijay
+
+// let customers = [
+//     { name: "arun", purchase: 5000 },
+//     { name: "vijay", purchase: 15000 },
+//     { name: "surya", purchase: 25000 }
+// ];
+// let vipCustomer = customers.find(customer => customer.purchase > 10000);
+// console.log(vipCustomer.name); // vijay
+
+
+// // 8. Reverse Chat Message
+// // Concept:
+// // split(), reverse(), join()
+// // Task:
+// // Reverse the message.
+// // Input:
+// // let msg = "hello"
+// // Expected Output:
+// // olleh
+// let msg = "hello";
+// let reversedMsg = msg.split("").reverse().join("");
+// console.log(reversedMsg); // olleh
+
+
+// // 9. Remove Duplicate Product
+// // Concept:
+// // indexOf()
+// // Task:
+// // Find position of "mobile".
+// // Input:
+// // let products = ["tv","laptop","mobile","watch"]
+// // Expected Output:
+// // 2
+// let products = ["tv", "laptop", "mobile", "watch"];
+// let mobileIndex = products.indexOf("mobile");
+// console.log(mobileIndex); // 2
+
+
+// // 10. Student Rank Sort
+// // Concept:
+// // sort()
+// // Task:
+// // Sort marks ascending order.
+// // Input:
+// // let marks = [99,45,12,67,89]
+// // Expected Output:
+// // [12,45,67,89,99]
+// let marks2 = [99, 45, 12, 67, 89];
+// marks2.sort((a, b) => a - b);
+// console.log(marks2); // [12, 45, 67, 89, 99]
+
+
+// // 11. Movie Search
+// // Concept:
+// // some()
+// // Task:
+// // Check whether "Leo" movie exists.
+// // Input:
+// // let movies = ["Jailer","Leo","Vikram"]
+// // Expected Output:
+// // true
+// let movies = ["Jailer", "Leo", "Vikram"];
+// let hasLeo = movies.some(movie => movie === "Leo");
+// console.log(hasLeo); // true
+
+
+// // 12. Hide Mobile Number
+// // Concept:
+// // slice()
+// // Task:
+// // Show only last 4 digits.
+// // Input:
+// // let num = "6383366774"
+// // Expected Output:
+// // 6774
+// let num = "6383366774";
+// let lastFourDigits = num.slice(-4);
+// console.log(lastFourDigits); // 6774
+
+
+// // 13. Online Exam Result
+// // Concept:
+// // ternary operator
+// // Task:
+// // If mark >= 35 print "Pass" else "Fail".
+// // Input:
+// // let mark = 78
+// // Expected Output:
+// // Pass
+// let mark = 78;
+// let result = mark >= 35 ? "Pass" : "Fail";
+// console.log(result); // Pass
+
+
+// // 14. Cab Booking Price
+// // Concept:
+// // function, return
+// // Task:
+// // Create function for total fare.
+// // Input:
+// // baseFare = 100
+// // extraKm = 50
+// // Expected Output:
+// // 150
+// function calculateFare(baseFare, extraKm) {
+//     return baseFare + extraKm;
+// }
+// let baseFare = 100;
+// let extraKm = 50;
+// let totalFare = calculateFare(baseFare, extraKm);
+// console.log(totalFare); // 150
+
+// // 15. Instagram Hashtag Generator
+// // Concept:
+// // replaceAll()
+// // Task:
+// // Convert spaces into _
+// // Input:
+// // let tag = "web developer"
+// // Expected Output:
+// // web_developer
+// let tag = "web developer";
+// let hashtag = tag.replaceAll(" ", "_");
+// console.log(hashtag); // web_developer
+
+
+// // 16. Netflix Kids Content
+// // Concept:
+// // filter()
+// // Task:
+// // Get only movies below age 18.
+// // Input:
+// // let movies = [
+// //   {name:"A", age:13},
+// //   {name:"B", age:18},
+// //   {name:"C", age:10}
+// // ]
+// // Expected Output:
+// // A
+// // C
+// let movies2 = [
+//     { name: "A", age: 13 },
+//     { name: "B", age: 18 },
+//     { name: "C", age: 10 }
+// ];
+// let kidsMovies = movies2.filter(movie => movie.age < 18);
+// kidsMovies.forEach(movie => console.log(movie.name)); // A C
+
+
+// // 17. E-commerce Product Search
+// // Concept:
+// // startsWith()
+// // Task:
+// // Check whether product starts with "i".
+// // Input:
+// // let product = "iphone"
+// // Expected Output:
+// // true
+// let product = "iphone";
+// let startsWithI = product.startsWith("i");
+// console.log(startsWithI); // true
+
+
+// // 18. WhatsApp Group Names
+// // Concept:
+// // forEach()
+// // Task:
+// // Print all group names with numbering.
+// // Input:
+// // let groups = ["office","friends","family"]
+// // Expected Output:
+// // 1 office
+// // 2 friends
+// // 3 family
+// let groups = ["office", "friends", "family"];
+// groups.forEach((group, index) => {
+//     console.log((index + 1) + " " + group);
+// });
+
+
+// // 19. Salary Highest Finder
+// // Concept:
+// // reduce()
+// // Task:
+// // Find highest salary.
+// // Input:
+// // let salary = [20000,50000,70000,10000]
+// // Expected Output:
+// // 70000
+// let salary = [20000, 50000, 70000, 10000];
+// let highestSalary = salary.reduce((max, current) => current > max ? current : max, 0);
+// console.log(highestSalary); // 70000
+
+
+// // 20. Password Security Checker
+// // Concept:
+// // length, includes()
+// // Task:
+// // Password should:
+// // contain @
+// // minimum 8 characters
+// // Input:
+// // let password = "navi@123"
+// // Expected Output:
+// // Strong Password
+// let password = "navi@123";
+// if (password.length >= 8 && password.includes("@")) {
+//     console.log("Strong Password");
+// } else {
+//     console.log("Weak Password");
+// } // Strong Password
+
+
+               //TASK 7
+
+// Real-Time JavaScript Tasks (API + Async + Array Methods)
+// 1. E-Commerce Product Filter
+// Using the same API:
+// https://fakestoreapi.com/products/
 // Task:
-// Calculate total bill amount.
-// Input:
-// let cart = [1200, 3400, 500, 999]
-// Expected Output:
-// 6099
-
-let cart = [1200, 3400, 500, 999];
-let totalBill = cart.reduce((total, item) => total + item, 0);
-console.log(totalBill); // 6099
-
-// 3. Login Username Formatter
-// Concept:
-// slice(), toUpperCase()
-// Task:
-// Convert first letter into capital.
-// Input:
-// let user = "naveen"
-// Expected Output:
-// Naveen
-let user = "naveen";
-let formattedUser = user.charAt(0).toUpperCase() + user.slice(1);
-console.log(formattedUser); // Naveen
-
-// 4. OTP Checker
-// Concept:
-// includes()
-// Task:
-// Check whether OTP contains number 0.
-// Input:
-// let otp = "560890"
-// Expected Output:
-// Valid OTP
-// Else:
-// Invalid OTP
-let otp = "560890";
-if (otp.includes("0")) {
-    console.log("Valid OTP");
-} else {
-    console.log("Invalid OTP");
-} // Valid OTP
-
-
-// 5. Food Delivery App
-// Concept:
-// push(), pop()
-// Task:
-// Add new order and remove delivered order.
-// Input:
-// let orders = ["burger","pizza"]
-// Process:
-// Add "shawarma"
-// Remove last order
-// Expected Output:
-// ["burger","pizza"]
-let orders = ["burger", "pizza"];
-orders.push("shawarma");
-orders.pop();
-console.log(orders); // ["burger", "pizza"]
-
-
-// 6. Attendance Checker
-// Concept:
-// every()
-// Task:
-// Check whether all students passed.
-// Input:
-// let marks = [40,50,70,80]
-// Condition:
-// mark >= 35
-// Expected Output:
-// true
-let marks = [40, 50, 70, 80];
-let allPassed = marks.every(mark => mark >= 35);
-console.log(allPassed); // true
-
-
-// 7. Find VIP Customer
-// Concept:
-// find()
-// Task:
-// Find first customer whose purchase is greater than 10000.
-// Input:
-// let customer = [
-//   {name:"arun", purchase:5000},
-//   {name:"vijay", purchase:15000},
-//   {name:"surya", purchase:25000}
-// ]
-// Expected Output:
-// vijay
-
-let customers = [
-    { name: "arun", purchase: 5000 },
-    { name: "vijay", purchase: 15000 },
-    { name: "surya", purchase: 25000 }
-];
-let vipCustomer = customers.find(customer => customer.purchase > 10000);
-console.log(vipCustomer.name); // vijay
-
-
-// 8. Reverse Chat Message
-// Concept:
-// split(), reverse(), join()
-// Task:
-// Reverse the message.
-// Input:
-// let msg = "hello"
-// Expected Output:
-// olleh
-let msg = "hello";
-let reversedMsg = msg.split("").reverse().join("");
-console.log(reversedMsg); // olleh
-
-
-// 9. Remove Duplicate Product
-// Concept:
-// indexOf()
-// Task:
-// Find position of "mobile".
-// Input:
-// let products = ["tv","laptop","mobile","watch"]
-// Expected Output:
-// 2
-let products = ["tv", "laptop", "mobile", "watch"];
-let mobileIndex = products.indexOf("mobile");
-console.log(mobileIndex); // 2
-
-
-// 10. Student Rank Sort
-// Concept:
-// sort()
-// Task:
-// Sort marks ascending order.
-// Input:
-// let marks = [99,45,12,67,89]
-// Expected Output:
-// [12,45,67,89,99]
-let marks2 = [99, 45, 12, 67, 89];
-marks2.sort((a, b) => a - b);
-console.log(marks2); // [12, 45, 67, 89, 99]
-
-
-// 11. Movie Search
-// Concept:
-// some()
-// Task:
-// Check whether "Leo" movie exists.
-// Input:
-// let movies = ["Jailer","Leo","Vikram"]
-// Expected Output:
-// true
-let movies = ["Jailer", "Leo", "Vikram"];
-let hasLeo = movies.some(movie => movie === "Leo");
-console.log(hasLeo); // true
-
-
-// 12. Hide Mobile Number
-// Concept:
-// slice()
-// Task:
-// Show only last 4 digits.
-// Input:
-// let num = "6383366774"
-// Expected Output:
-// 6774
-let num = "6383366774";
-let lastFourDigits = num.slice(-4);
-console.log(lastFourDigits); // 6774
-
-
-// 13. Online Exam Result
-// Concept:
-// ternary operator
-// Task:
-// If mark >= 35 print "Pass" else "Fail".
-// Input:
-// let mark = 78
-// Expected Output:
-// Pass
-let mark = 78;
-let result = mark >= 35 ? "Pass" : "Fail";
-console.log(result); // Pass
-
-
-// 14. Cab Booking Price
-// Concept:
-// function, return
-// Task:
-// Create function for total fare.
-// Input:
-// baseFare = 100
-// extraKm = 50
-// Expected Output:
-// 150
-function calculateFare(baseFare, extraKm) {
-    return baseFare + extraKm;
-}
-let baseFare = 100;
-let extraKm = 50;
-let totalFare = calculateFare(baseFare, extraKm);
-console.log(totalFare); // 150
-
-// 15. Instagram Hashtag Generator
-// Concept:
-// replaceAll()
-// Task:
-// Convert spaces into _
-// Input:
-// let tag = "web developer"
-// Expected Output:
-// web_developer
-let tag = "web developer";
-let hashtag = tag.replaceAll(" ", "_");
-console.log(hashtag); // web_developer
-
-
-// 16. Netflix Kids Content
-// Concept:
+// Fetch all products
+// Filter products whose:
+// price > 100
+// category = "electronics"
+// Print:
+// title
+// price
+// Expected Concept:
+// fetch()
 // filter()
-// Task:
-// Get only movies below age 18.
-// Input:
-// let movies = [
-//   {name:"A", age:13},
-//   {name:"B", age:18},
-//   {name:"C", age:10}
-// ]
-// Expected Output:
-// A
-// C
-let movies2 = [
-    { name: "A", age: 13 },
-    { name: "B", age: 18 },
-    { name: "C", age: 10 }
-];
-let kidsMovies = movies2.filter(movie => movie.age < 18);
-kidsMovies.forEach(movie => console.log(movie.name)); // A C
-
-
-// 17. E-commerce Product Search
-// Concept:
-// startsWith()
-// Task:
-// Check whether product starts with "i".
-// Input:
-// let product = "iphone"
-// Expected Output:
-// true
-let product = "iphone";
-let startsWithI = product.startsWith("i");
-console.log(startsWithI); // true
-
-
-// 18. WhatsApp Group Names
-// Concept:
 // forEach()
+fetch("https://fakestoreapi.com/products/")
+    .then(response => response.json())
+    .then(products => {
+        let filteredProducts = products.filter(product => product.price > 100 && product.category === "electronics");
+        filteredProducts.forEach(product => {
+            console.log("Title:", product.title);
+            console.log("Price:", product.price);
+        });
+    })
+    .catch(error => console.error("Error fetching products:", error));
+    
+//  2. Online Shopping Cart Total
 // Task:
-// Print all group names with numbering.
-// Input:
-// let groups = ["office","friends","family"]
+// Create an array:
+// let cart = [
+//   {product:"Shoes", price:2000, qty:2},
+//   {product:"Watch", price:1500, qty:1},
+//   {product:"Bag", price:1000, qty:3}
+// ]
+// Calculate:
+// Total bill amount
 // Expected Output:
-// 1 office
-// 2 friends
-// 3 family
-let groups = ["office", "friends", "family"];
-groups.forEach((group, index) => {
-    console.log((index + 1) + " " + group);
-});
-
-
-// 19. Salary Highest Finder
-// Concept:
+// 8500
+// Use:
 // reduce()
+let cart = [
+    { product: "Shoes", price: 2000, qty: 2 },
+    { product: "Watch", price: 1500, qty: 1 },
+    { product: "Bag", price: 1000, qty: 3 }
+];
+let totalBill = cart.reduce((total, item) => total + (item.price * item.qty), 0);
+console.log(totalBill); // 8500 
+
+// 3. Employee Salary Dashboard
 // Task:
-// Find highest salary.
-// Input:
-// let salary = [20000,50000,70000,10000]
-// Expected Output:
-// 70000
-let salary = [20000, 50000, 70000, 10000];
-let highestSalary = salary.reduce((max, current) => current > max ? current : max, 0);
-console.log(highestSalary); // 70000
+// Filter employees whose salary is greater than 40000.
+// let employees = [
+//   {name:"John", salary:25000},
+//   {name:"Sam", salary:50000},
+//   {name:"Ravi", salary:45000},
+//   {name:"Kumar", salary:30000}
+// ]
+// Output:
+// Sam
+// Ravi
+// Use:
+// filter()
+// map()
+let employees = [
+    { name: "John", salary: 25000 },
+    { name: "Sam", salary: 50000 },
+    { name: "Ravi", salary: 45000 },
+    { name: "Kumar", salary: 30000 }
+];
+let highEarners = employees.filter(employee => employee.salary > 40000).map(employee => employee.name);
+highEarners.forEach(name => console.log(name)); // Sam Ravi
+
+// 4. Food Delivery App
+// Task:
+// Find first restaurant rating greater than 4.5
+// let hotels = [
+//   {hotel:"A2B", rating:4.1},
+//   {hotel:"KFC", rating:4.7},
+//   {hotel:"Dominos", rating:4.3}
+// ]
+// Use:
+// find()
+let hotels = [
+    { hotel: "A2B", rating: 4.1 },
+    { hotel: "KFC", rating: 4.7 },
+    { hotel: "Dominos", rating: 4.3 }
+];
+let topRatedHotel = hotels.find(hotel => hotel.rating > 4.5);
+console.log(topRatedHotel.hotel); // KFC
 
 
-// 20. Password Security Checker
-// Concept:
-// length, includes()
+// 5. Student Pass/Fail System
 // Task:
-// Password should:
-// contain @
-// minimum 8 characters
-// Input:
-// let password = "navi@123"
+// Check all students passed or not.
+// let marks = [45,67,89,90,34]
+// Condition:
+// pass mark = 35
+// Use:
+// every()
+let marks = [45, 67, 89, 90, 34];
+let allPassed = marks.every(mark => mark >= 35);
+console.log(allPassed); // false
+
+
+// 6. OTP Verification System
+// Task:
+// Check whether entered OTP exists.
+// let otpList = [1234,4567,7890,9876]
+// Use:
+// includes()
+let otpList = [1234, 4567, 7890, 9876];
+let enteredOtp = 4567;
+if (otpList.includes(enteredOtp)) {
+    console.log("OTP Verified");
+}
+
+
+// 7. Movie Booking Timer
+// Task:
+// Create countdown from 10 to 0 using:
+// setInterval()
+// clearInterval()
 // Expected Output:
-// Strong Password
-let password = "navi@123";
-if (password.length >= 8 && password.includes("@")) {
-    console.log("Strong Password");
+// 10
+// 9
+// 8
+// ...
+// 0
+// Booking Closed
+let countdown = 10;
+let timer = setInterval(() => {
+    console.log(countdown);
+    countdown--;
+    if (countdown < 0) {
+        clearInterval(timer);
+        console.log("Booking Closed");
+    }
+}, 1000);
+
+
+// 8. Instagram Like Counter
+// Task:
+// Every second increase likes count.
+// Likes : 1
+// Likes : 2
+// Likes : 3
+// Stop after 10 likes.
+// Use:
+// setInterval()
+// clearInterval()
+let likes = 0;
+let likeTimer = setInterval(() => {
+    likes++;
+    console.log("Likes:", likes);
+    if (likes >= 10) {
+        clearInterval(likeTimer);
+    }
+}, 1000);
+
+
+// 9. Login Authentication
+// Task:
+// Check:
+// username
+// password
+// let username = "admin"
+// let password = "12345"
+// Condition:
+// both correct → Login Success
+// otherwise → Invalid Credentials
+// Use:
+// if else
+// logical operator
+let username = "admin";
+let password = "12345";
+if (username === "admin" && password === "12345") {
+    console.log("Login Success");
 } else {
-    console.log("Weak Password");
-} // Strong Password
+    console.log("Invalid Credentials");
+}
 
+
+// 10. Weather App Simulation
+// Task:
+// Create Promise manually.
+// Condition:
+// If internet = true → resolve("Weather Data")
+// else reject("No Internet")
+// Use:
+// Promise
+// resolve
+// reject
+// then
+// catch
+function fetchWeatherData(internet) {
+    return new Promise((resolve, reject) => {
+        if (internet) {
+            resolve("Weather Data");
+        } else {
+            reject("No Internet");
+        }
+    });
+}
+fetchWeatherData(true)
+    .then(data => console.log(data)) // Weather Data
+    .catch(error => console.error(error));
+fetchWeatherData(false)
+    .then(data => console.log(data))
+    .catch(error => console.error(error)); // No Internet
+
+// Mini Project Level Tasks
+// 11. Amazon Product Search
+// Task:
+// Search products containing word "shirt"
+// Use:
+// filter()
+// includes()
+let products = [
+    { name: "T-shirt", price: 500 },
+    { name: "Shirt", price: 1000 },
+    { name: "Jeans", price: 1500 },
+    { name: "Shirt Dress", price: 2000 }
+];
+let shirtProducts = products.filter(product => product.name.toLowerCase().includes("shirt"));
+shirtProducts.forEach(product => console.log(product.name)); // Shirt Shirt Dress
+
+
+// 12. YouTube Video Duration
+// Task:
+// Calculate total watch time.
+// let videos = [10,20,30,40]
+// Use:
+// reduce()
+let videos = [10, 20, 30, 40];
+let totalWatchTime = videos.reduce((total, duration) => total + duration, 0);
+console.log("Total Watch Time:", totalWatchTime); // Total Watch Time: 100
+
+
+// 13. Swiggy Order Status
+// Task:
+// Use switch statement.
+// Placed
+// Preparing
+// Out for Delivery
+// Delivered
+// Print suitable message.
+let orderStatus = "Preparing";
+switch (orderStatus) {
+    case "Placed":
+        console.log("Your order has been placed.");
+        break;
+    case "Preparing":
+        console.log("Your order is being prepared.");
+        break;
+    case "Out for Delivery":
+        console.log("Your order is out for delivery.");
+        break;
+    case "Delivered":
+        console.log("Your order has been delivered.");
+        break;
+    default:
+        console.log("Unknown order status.");
+}
+
+// 14. WhatsApp Chat Analyzer
+// Task:
+// Count total messages.
+// let chats = ["hi","hello","where","ok","bye"]
+// Use:
+// length
+// loop
+let chats = ["hi", "hello", "where", "ok", "bye"];
+console.log("Total Messages:", chats.length);
+
+
+// 15. Netflix Age Restriction
+// Task:
+// If age >= 18:
+// show movie
+// Else:
+// access denied
+// Use:
+// ternary operator
+// age >= 18 ? "watch movie" : "access denied"
+// Advanced Real-Time Tasks
+let age = 20;
+let accessMessage = age >= 18 ? "Watch Movie" : "Access Denied";
+console.log(accessMessage); // Watch Movie
+
+
+// 16. Flipkart Product Sorting
+// Task:
+// Sort products by price low to high.
+// let prices = [1200,450,9999,2500,700]
+// Use:
+// sort((a,b)=>a-b)
+let prices = [1200, 450, 9999, 2500, 700];
+prices.sort((a, b) => a - b);
+console.log(prices); // [450, 700, 1200, 2500, 9999]
+
+
+// 17. Employee Attendance
+// Task:
+// Convert:
+// ["present","absent","present"]
+// Into object count:
+// {
+//  present:2,
+//  absent:1
+// }
+// Use:
+// reduce()
+let attendance = ["present", "absent", "present"];
+let attendanceCount = attendance.reduce((count, status) => {
+    count[status] = (count[status] || 0) + 1;
+    return count;
+}, {});
+console.log(attendanceCount); // { present: 2, absent: 1 }
+
+
+// 18. Banking System
+// Task:
+// Create:
+// deposit()
+// withdraw()
+// checkBalance()
+// Using functions.
+let balance = 0;
+function deposit(amount) {
+    balance += amount;
+    console.log("Deposited:", amount);
+}
+function withdraw(amount) {
+    if (amount <= balance) {
+        balance -= amount;
+        console.log("Withdrawn:", amount);
+    } else {
+        console.log("Insufficient funds");
+    }
+}
+function checkBalance() {
+    console.log("Current Balance:", balance);
+}
+deposit(1000); // Deposited: 1000
+withdraw(500); // Withdrawn: 500
+checkBalance(); // Current Balance: 500
+
+
+// 19. Zomato Rating Checker
+// Task:
+// Check any hotel rating below 3.
+// Use:
+// some()
+let hotelRatings = [4.5, 3.8, 2.9, 4.0];
+let hasLowRating = hotelRatings.some(rating => rating < 3);
+console.log("Any hotel with rating below 3:", hasLowRating); // Any hotel with rating below 3: true
+
+// 20. Real API Product Table
+// Task:
+// Fetch API and print:
+// title
+// price
+// image
+// Inside HTML cards dynamically.
+// Concepts:
+// fetch()
+// DOM
+// map()
+// template literal
+fetch("https://fakestoreapi.com/products/")
+    .then(response => response.json())
+    .then(products => {
+        // Process and display products
+    });
+
+
+// Challenge Task 🔥
+// 21. Build Small E-Commerce Logic
+// Features:
+// Fetch products
+// Filter by category
+// Sort by price
+// Search product
+// Add to cart
+// Total calculation
+// Concepts Covered:
+// fetch
+// async
+// array methods
+// DOM
+// events
+// functions
+// objects
+// loops
+// higher order functions
+fetch("https://fakestoreapi.com/products/")
+    .then(response => response.json())
+    .then(data => {
+        products = data;
+        // Process and display products
+    });
 
 
 
